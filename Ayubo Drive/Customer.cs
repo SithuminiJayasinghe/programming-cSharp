@@ -13,8 +13,9 @@ namespace Ayubo_Drive
 {
     public partial class Form_customer : Form
     {
-        static string constring = "Data Source=DESKTOP-MHS4TMT\\SQLEXPRESS;Initial Catalog=Ayubo_drive;Integrated Security=True";
-        SqlConnection m_con = new SqlConnection(constring);
+
+        SqlConnection m_con = new DatabaseConnection().getConnection();
+        public static int WEEKLY_RENT = 10000;
         public Form_customer()
         {
             InitializeComponent();

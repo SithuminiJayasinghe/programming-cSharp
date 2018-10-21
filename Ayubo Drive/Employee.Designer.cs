@@ -38,7 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ayubodriveDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ayubodriveDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ayubo_driveDataSet = new Ayubo_Drive.Ayubo_driveDataSet();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -55,16 +56,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ayubo_driveDataSet = new Ayubo_Drive.Ayubo_driveDataSet();
-            this.ayubodriveDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ayubodriveDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSet2BindingSource)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSet2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -109,6 +109,7 @@
             this.label3.Size = new System.Drawing.Size(16, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "...";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -150,6 +151,16 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(629, 247);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // ayubodriveDataSetBindingSource
+            // 
+            this.ayubodriveDataSetBindingSource.DataSource = this.ayubo_driveDataSet;
+            this.ayubodriveDataSetBindingSource.Position = 0;
+            // 
+            // ayubo_driveDataSet
+            // 
+            this.ayubo_driveDataSet.DataSetName = "Ayubo_driveDataSet";
+            this.ayubo_driveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage3
             // 
@@ -316,16 +327,6 @@
             this.label5.Text = "Customer name";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // ayubo_driveDataSet
-            // 
-            this.ayubo_driveDataSet.DataSetName = "Ayubo_driveDataSet";
-            this.ayubo_driveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ayubodriveDataSetBindingSource
-            // 
-            this.ayubodriveDataSetBindingSource.DataSource = this.ayubo_driveDataSet;
-            this.ayubodriveDataSetBindingSource.Position = 0;
-            // 
             // Form_employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,11 +340,11 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSet2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

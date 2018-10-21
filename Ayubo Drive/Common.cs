@@ -9,13 +9,14 @@ namespace Ayubo_Drive
 {
     public class Driver
     {
+        //store driver details temporarily to use in line 47...
         public string D_ID;
         public string D_NAME;
         public int D_Rate_Per_Hr;
     }
 
     public class Vehicle
-    {
+    {//store vehicle details to use in 87...
         public string V_Type_Id;
         public string V_Type_Name;
         public int V_Rate;
