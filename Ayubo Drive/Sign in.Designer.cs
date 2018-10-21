@@ -72,7 +72,7 @@
             // 
             // button_sign_in
             // 
-            this.button_sign_in.Location = new System.Drawing.Point(65, 117);
+            this.button_sign_in.Location = new System.Drawing.Point(119, 109);
             this.button_sign_in.Name = "button_sign_in";
             this.button_sign_in.Size = new System.Drawing.Size(75, 23);
             this.button_sign_in.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // button_sign_up
             // 
-            this.button_sign_up.Location = new System.Drawing.Point(153, 262);
+            this.button_sign_up.Location = new System.Drawing.Point(119, 262);
             this.button_sign_up.Name = "button_sign_up";
             this.button_sign_up.Size = new System.Drawing.Size(75, 23);
             this.button_sign_up.TabIndex = 4;
@@ -93,7 +93,7 @@
             // label_new_user
             // 
             this.label_new_user.AutoSize = true;
-            this.label_new_user.Location = new System.Drawing.Point(159, 237);
+            this.label_new_user.Location = new System.Drawing.Point(6, 267);
             this.label_new_user.Name = "label_new_user";
             this.label_new_user.Size = new System.Drawing.Size(58, 13);
             this.label_new_user.TabIndex = 5;
@@ -126,7 +126,7 @@
             this.groupBox1.Controls.Add(this.label_password);
             this.groupBox1.Location = new System.Drawing.Point(39, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(237, 302);
+            this.groupBox1.Size = new System.Drawing.Size(224, 302);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign-in";

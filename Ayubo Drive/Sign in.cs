@@ -13,8 +13,7 @@ namespace Ayubo_Drive
 {
     public partial class Form_sign_in : Form
     {
-        static string constring = "Data Source=DESKTOP-MHS4TMT\\SQLEXPRESS;Initial Catalog=Ayubo_drive;Integrated Security=True";
-        SqlConnection m_con = new SqlConnection(constring);
+        SqlConnection m_con = new DatabaseConnection().getConnection();
         public Form_sign_in()
         {
             InitializeComponent();
@@ -56,7 +55,7 @@ namespace Ayubo_Drive
 
             try
             {
-
+                
                 string sql = "select * from Customer where C_Name ='" + textBox1.Text + "' ";
                 SqlCommand cmd = new SqlCommand(sql, m_con);
                 m_con.Open();
@@ -80,6 +79,7 @@ namespace Ayubo_Drive
 
             catch (Exception ex)
             {
+
                 MessageBox.Show("Error");
             }
             finally
