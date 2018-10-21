@@ -82,6 +82,9 @@ namespace Ayubo_Drive
                     PrintConsole("totalValue with driver ", totalValue.ToString());
                 }
                 lblCost.Text = totalValue.ToString();
+                lblNoOfDays.Text = days.ToString();
+                label5.Text = v.V_Rate.ToString();
+                label49.Text = v.V_Weekly_Rate.ToString();
 
             }
         }
@@ -275,6 +278,16 @@ namespace Ayubo_Drive
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             doCalulation();
+        }
+
+        private void radioButton_with_a_driver_CheckedChanged(object sender, EventArgs e)
+        {
+            doCalulation();
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
