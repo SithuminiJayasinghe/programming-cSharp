@@ -67,16 +67,22 @@ namespace Ayubo_Drive
                 int remainingDays = days % 7;
                 PrintConsole("remainingDays ", remainingDays.ToString());
 
-                if(radioButton_without_a_driver.Checked == true)
+
+                int totalValue = v.V_Weekly_Rate * numberOfWeeks + v.V_Rate * remainingDays; 
+                if (radioButton_without_a_driver.Checked == true)
                 {
-                    int totalValue = v.V_Weekly_Rate * numberOfWeeks + v.V_Rate * remainingDays + d.D_Daily_Rate * days;
+                     
                     PrintConsole("totalValue without driver ", totalValue.ToString());
 
                 }
                 else
                 {
-
+                    // This is with driver. So we have to add driver rate.
+                    totalValue = totalValue + d.D_Daily_Rate * days;
+                    PrintConsole("totalValue with driver ", totalValue.ToString());
                 }
+                lblCost.Text = totalValue.ToString();
+
             }
         }
 
@@ -207,7 +213,7 @@ namespace Ayubo_Drive
                 //label7.Text = days.ToString() + "Days";
 
                 int order = sql + intsql3 + days;
-                label7.Text = Convert.ToString(order);
+                lblCost.Text = Convert.ToString(order);
 
 
 

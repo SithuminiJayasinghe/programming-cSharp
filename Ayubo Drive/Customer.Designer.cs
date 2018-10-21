@@ -34,7 +34,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblCost = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -148,7 +148,7 @@
             this.groupBox2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.lblCost);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label6);
@@ -188,15 +188,15 @@
             this.dateTimePicker1.Value = new System.DateTime(2018, 10, 20, 9, 12, 32, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // label7
+            // lblCost
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(132, 297);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Your rent cost...";
-            this.label7.Click += new System.EventHandler(this.label2_Click);
+            this.lblCost.AutoSize = true;
+            this.lblCost.Location = new System.Drawing.Point(132, 297);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(82, 13);
+            this.lblCost.TabIndex = 26;
+            this.lblCost.Text = "Your rent cost...";
+            this.lblCost.Click += new System.EventHandler(this.label2_Click);
             // 
             // button2
             // 
@@ -937,7 +937,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCost;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
