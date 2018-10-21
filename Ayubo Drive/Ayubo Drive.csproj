@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ayubo_driveDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Common.cs" />
     <Compile Include="Customer.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -22,7 +22,7 @@ namespace Ayubo_Drive
 
         private void PrintConsole(String title, String message)
         {
-            Console.WriteLine(title + " = "+ message);
+            Console.WriteLine(title + " = " + message);
         }
 
         private void doCalulation()
@@ -30,14 +30,14 @@ namespace Ayubo_Drive
             if(comboBox1.SelectedValue != null && comboBox7.SelectedValue != null)
             {
                 string vTypeName = comboBox1.Text;
-                string vTypeRate = comboBox1.SelectedValue.ToString();
+                string vTypeID = comboBox1.SelectedValue.ToString();
                 PrintConsole("on Changed combo1 vTypeName ", vTypeName);
-                PrintConsole("on Changed combo1 vTypeRate ", vTypeRate);
+                PrintConsole("on Changed combo1 vTypeID ", vTypeID);
 
-                String empName = comboBox7.Text;
-                String empId = comboBox7.SelectedValue.ToString();
-                PrintConsole("on Changed combo1 empName ", empName);
-                PrintConsole("on Changed combo1 empId ", empId);
+                String driverName = comboBox7.Text;
+                String driverId = comboBox7.SelectedValue.ToString();
+                PrintConsole("on Changed combo1 driverName ", driverName);
+                PrintConsole("on Changed combo1 driverId ", driverId);
 
 
                 DateTime d1 = dateTimePicker1.Value;
@@ -47,6 +47,18 @@ namespace Ayubo_Drive
                 double dDays = t.TotalDays;
                 int days = Convert.ToInt32(dDays);
                 PrintConsole("Number of days ", days.ToString());
+
+                Common c = new Common();
+                Driver d = c.GetDriverRowById(driverId);
+                Vehicle v = c.GetVehicleTypeById(vTypeID);
+    
+                PrintConsole("Driver Rate ", d.D_Rate_Per_Hr.ToString());
+                PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
+
+
+
+
+
             }
      
 
