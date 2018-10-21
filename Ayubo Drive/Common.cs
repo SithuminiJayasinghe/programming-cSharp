@@ -13,6 +13,7 @@ namespace Ayubo_Drive
         public string D_ID;
         public string D_NAME;
         public int D_Rate_Per_Hr;
+        public int D_Daily_Rate;
     }
 
     public class Vehicle
@@ -20,6 +21,7 @@ namespace Ayubo_Drive
         public string V_Type_Id;
         public string V_Type_Name;
         public int V_Rate;
+        public int V_Weekly_Rate;
     }
 
     class Common
@@ -45,8 +47,10 @@ namespace Ayubo_Drive
                 {
                    
                     d.D_NAME = dreader[1].ToString();
-                    d.D_Rate_Per_Hr = Int32.Parse(dreader[2].ToString());
                     d.D_ID = dreader[0].ToString();
+                    d.D_Rate_Per_Hr = Int32.Parse(dreader[2].ToString());
+                    d.D_Daily_Rate = Int32.Parse(dreader[4].ToString());
+
                     dreader.Close();
                     return d;
 
@@ -85,6 +89,7 @@ namespace Ayubo_Drive
 
                     v.V_Type_Id = dreader[0].ToString();
                     v.V_Rate = Int32.Parse(dreader[2].ToString());
+                    v.V_Weekly_Rate = Int32.Parse(dreader[3].ToString());
                     v.V_Type_Name = dreader[1].ToString();
                     dreader.Close();
                     return v;

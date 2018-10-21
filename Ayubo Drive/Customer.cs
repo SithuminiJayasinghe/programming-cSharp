@@ -54,16 +54,30 @@ namespace Ayubo_Drive
                 Vehicle v = c.GetVehicleTypeById(vTypeID);
     
                 PrintConsole("Driver Rate ", d.D_Rate_Per_Hr.ToString());
+                PrintConsole("Driver D_Daily_Rate ", d.D_Daily_Rate.ToString());
                 PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
+                PrintConsole("Vehicle V_Weekly_Rate ", v.V_Weekly_Rate.ToString());
+
+                // lets find the no of weeks
+                int numberOfWeeks = days / 7;
+                PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
 
 
+                // lets find no of remaining days
+                int remainingDays = days % 7;
+                PrintConsole("remainingDays ", remainingDays.ToString());
 
+                if(radioButton_without_a_driver.Checked == true)
+                {
+                    int totalValue = v.V_Weekly_Rate * numberOfWeeks + v.V_Rate * remainingDays + d.D_Daily_Rate * days;
+                    PrintConsole("totalValue without driver ", totalValue.ToString());
 
+                }
+                else
+                {
 
+                }
             }
-     
-
-
         }
 
         private void Customer_Load(object sender, EventArgs e)
