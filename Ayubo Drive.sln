@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ayubo Drive", "Ayubo Drive\Ayubo Drive.csproj", "{B3C23E9D-2FE3-4C36-81C7-3895A4FBADBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9CD71C4D-3647-4E16-BC2F-3242CCB42609}"
+	ProjectSection(SolutionItems) = preProject
+		Class1.cs = Class1.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3C23E9D-2FE3-4C36-81C7-3895A4FBADBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C23E9D-2FE3-4C36-81C7-3895A4FBADBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C23E9D-2FE3-4C36-81C7-3895A4FBADBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C23E9D-2FE3-4C36-81C7-3895A4FBADBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F81519DB-8E83-4B56-AF20-6A41B12DA8BD}
+	EndGlobalSection
+EndGlobal
