@@ -74,6 +74,10 @@
             this.ayubo_driveDataSet3 = new Ayubo_Drive.Ayubo_driveDataSet();
             this.ayubodriveDataSetBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.jobTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.JobTableAdapter();
+            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.driverIdToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.driverIdToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -90,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource3)).BeginInit();
+            this.fillBy1ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -157,6 +162,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -461,11 +467,44 @@
             // 
             this.jobTableAdapter.ClearBeforeFill = true;
             // 
+            // fillBy1ToolStrip
+            // 
+            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.driverIdToolStripLabel,
+            this.driverIdToolStripTextBox,
+            this.fillBy1ToolStripButton});
+            this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(800, 25);
+            this.fillBy1ToolStrip.TabIndex = 1;
+            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
+            this.fillBy1ToolStrip.Visible = false;
+            // 
+            // driverIdToolStripTextBox
+            // 
+            this.driverIdToolStripTextBox.Name = "driverIdToolStripTextBox";
+            this.driverIdToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // driverIdToolStripLabel
+            // 
+            this.driverIdToolStripLabel.Name = "driverIdToolStripLabel";
+            this.driverIdToolStripLabel.Size = new System.Drawing.Size(51, 22);
+            this.driverIdToolStripLabel.Text = "DriverId:";
+            // 
+            // fillBy1ToolStripButton
+            // 
+            this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
+            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy1ToolStripButton.Text = "FillBy1";
+            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click);
+            // 
             // Form_employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form_employee";
             this.Text = "Ayubo drive - Employees";
@@ -488,7 +527,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource3)).EndInit();
+            this.fillBy1ToolStrip.ResumeLayout(false);
+            this.fillBy1ToolStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -539,5 +581,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
+        private System.Windows.Forms.ToolStripLabel driverIdToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox driverIdToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
     }
 }

@@ -42,7 +42,8 @@ namespace Ayubo_Drive
         {
             // TODO: This line of code loads data into the 'ayubo_driveDataSet.Job' table. You can move, or remove it, as needed.
             this.jobTableAdapter.Fill(this.ayubo_driveDataSet.Job);
-            Driver d = c.GetDriverRowById(Form_sign_in.CUSTOMER_ID);
+       
+            Driver d = c.GetDriverRowById(Form_sign_in.USER_ID);
             lblId.Text = d.D_ID;
             lblName.Text = d.D_NAME;
 
@@ -51,6 +52,32 @@ namespace Ayubo_Drive
         private void button1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.FillBy(this.ayubo_driveDataSet.Job, new System.Nullable<int>(((int)(System.Convert.ChangeType(Form_sign_in.USER_ID, typeof(int))))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.FillBy1(this.ayubo_driveDataSet.Job, new System.Nullable<int>(((int)(System.Convert.ChangeType(driverIdToolStripTextBox.Text, typeof(int))))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

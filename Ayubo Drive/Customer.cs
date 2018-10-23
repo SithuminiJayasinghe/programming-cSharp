@@ -16,6 +16,10 @@ namespace Ayubo_Drive
 
         SqlConnection m_con = new DatabaseConnection().getConnection();
         public static int WEEKLY_RENT = 10000;
+        public Driver d;
+        public Vehicle v;
+        public int days = 0;
+        Common c = new Common();
         public Form_customer()
         {
             InitializeComponent();
@@ -26,7 +30,7 @@ namespace Ayubo_Drive
             Console.WriteLine(title + " = " + message);
         }
 
-        private void doCalulation()
+        private int doCalulation()
         {
             if(comboBox1.SelectedValue != null && comboBox7.SelectedValue != null)
             {
@@ -46,12 +50,12 @@ namespace Ayubo_Drive
 
                 TimeSpan t = d2 - d1;
                 double dDays = t.TotalDays;
-                int days = Convert.ToInt32(dDays);
+                days = Convert.ToInt32(dDays);
                 PrintConsole("Number of days ", days.ToString());
 
-                Common c = new Common();
-                Driver d = c.GetDriverRowById(driverId);
-                Vehicle v = c.GetVehicleTypeById(vTypeID);
+               
+                d = c.GetDriverRowById(driverId);
+                v = c.GetVehicleTypeById(vTypeID);
     
                 PrintConsole("Driver Rate ", d.D_Rate_Per_Hr.ToString());
                 PrintConsole("Driver D_Daily_Rate ", d.D_Daily_Rate.ToString());
@@ -85,7 +89,10 @@ namespace Ayubo_Drive
                 lblNoOfDays.Text = days.ToString();
                 label5.Text = v.V_Rate.ToString();
                 label49.Text = v.V_Weekly_Rate.ToString();
-
+                return totalValue;
+            } else
+            {
+                return 0;
             }
         }
 
@@ -173,58 +180,22 @@ namespace Ayubo_Drive
         {
             try
             {
+                Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
+                int total = doCalulation();
+                string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'"+customer.C_Name+"','Rent'," + total + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'"+d.D_NAME+"','"+days+"');";
+
+                Console.WriteLine(sql);
+                SqlCommand cmd = new SqlCommand(sql, m_con);
                 m_con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = m_con;
-                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteReader();
 
-                cmd.CommandText = "select V_Rate from VehicleType where V_Type_Id ='" + comboBox1.Text + "' ";
-
-                int sql = 0;
-                int intsql2 = 0;
-                int intsql3 = 0;
-                using (SqlDataReader sql1 = cmd.ExecuteReader())
-                {
-                    if (sql1.Read())
-                    {
-                        sql = Convert.ToInt32(String.Format("{0}", sql1["V_Rate"]));
-
-                    }
-
-                }
-
-                m_con.Close();
-                m_con.Open();
-                SqlCommand cmd1 = new SqlCommand();
-                cmd1.Connection = m_con;
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "select D_Rate_Per_Hr from Driver where D_Name ='" + comboBox7.Text + "' ";
-                using (SqlDataReader sql3 = cmd1.ExecuteReader())
-                {
-
-                    if (sql3.Read())
-                    {
-                        intsql3 = Convert.ToInt32(String.Format("{0}", sql3["D_Rate_Per_Hr"]));
-                    }
-                }
-                DateTime d1 = dateTimePicker1.Value;
-                DateTime d2 = dateTimePicker2.Value;
-
-                TimeSpan t = d2 - d1;
-                double dDays = t.TotalDays;
-                int days = Convert.ToInt32(dDays);
-                //label7.Text = days.ToString() + "Days";
-
-                int order = sql + intsql3 + days;
-                lblCost.Text = Convert.ToString(order);
-
-
-
+                MessageBox.Show("Successfully added new order");
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error");
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
             }
             finally
             {

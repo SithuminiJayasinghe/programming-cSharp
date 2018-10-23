@@ -23,6 +23,15 @@ namespace Ayubo_Drive
         public int V_Rate;
         public int V_Weekly_Rate;
     }
+    public class Customer
+    {//store vehicle details to use in 87...
+        public string C_Id;
+        public string C_Name;
+        public string C_Address;
+        public string C_Email;
+        public string C_Contact_No;
+        public string C_Password;
+    }
 
     class Common
     {
@@ -69,6 +78,54 @@ namespace Ayubo_Drive
                 m_con.Close();
             }
         }
+
+        public Customer GetCustomerById(String C_ID)
+        {
+
+            try
+            {
+
+                string sql = "select * from Customer where C_Id ='" + C_ID + "' ";
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                SqlDataReader dreader = cmd.ExecuteReader();
+
+                // We are going to store driver data in this variable (Driver)
+                Customer c = new Customer();
+
+                if (dreader.Read())
+                {
+
+
+
+                    c.C_Id = dreader[0].ToString();
+         c.C_Name = dreader[1].ToString();
+          c.C_Address = dreader[2].ToString();
+          c.C_Email = dreader[3].ToString();
+          c.C_Contact_No = dreader[4].ToString();
+          c.C_Password = dreader[5].ToString();
+
+
+        dreader.Close();
+                    return c;
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                m_con.Close();
+            }
+        }
+
 
         public Vehicle GetVehicleTypeById(String V_ID)
         {
