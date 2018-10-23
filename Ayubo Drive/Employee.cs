@@ -12,6 +12,7 @@ namespace Ayubo_Drive
 {
     public partial class Form_employee : Form
     {
+        Common c = new Common();
         public Form_employee()
         {
             InitializeComponent();
@@ -35,6 +36,21 @@ namespace Ayubo_Drive
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form_employee_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'ayubo_driveDataSet.Job' table. You can move, or remove it, as needed.
+            this.jobTableAdapter.Fill(this.ayubo_driveDataSet.Job);
+            Driver d = c.GetDriverRowById(Form_sign_in.CUSTOMER_ID);
+            lblId.Text = d.D_ID;
+            lblName.Text = d.D_NAME;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

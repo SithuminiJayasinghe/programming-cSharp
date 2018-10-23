@@ -114,6 +114,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
+            this.vehicleTypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -125,6 +126,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -643,11 +645,14 @@
             // 
             // comboBox8
             // 
+            this.comboBox8.DataSource = this.vehicleTypeBindingSource2;
+            this.comboBox8.DisplayMember = "V_Type_Name";
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(16, 48);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(121, 21);
             this.comboBox8.TabIndex = 6;
+            this.comboBox8.ValueMember = "V_Type_Id";
             // 
             // label13
             // 
@@ -701,9 +706,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(14, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
+            this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Vehicle number";
+            this.label8.Text = "Vehicle type";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // tabPage3
@@ -967,6 +972,11 @@
             this.label49.TabIndex = 33;
             this.label49.Text = "...";
             // 
+            // vehicleTypeBindingSource2
+            // 
+            this.vehicleTypeBindingSource2.DataMember = "VehicleType";
+            this.vehicleTypeBindingSource2.DataSource = this.ayubo_driveDataSet;
+            // 
             // Form_customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -991,6 +1001,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1082,5 +1093,6 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource vehicleTypeBindingSource2;
     }
 }

@@ -13,6 +13,7 @@ namespace Ayubo_Drive
 {
     public partial class Form_sign_in : Form
     {
+        public static string CUSTOMER_ID = "";
         SqlConnection m_con = new DatabaseConnection().getConnection();
         public Form_sign_in()
         {
@@ -66,6 +67,7 @@ namespace Ayubo_Drive
                     if (dreader[5].ToString().Equals(textBox2.Text))
                     {
                         Form_customer fc = new Form_customer();
+                       CUSTOMER_ID = dreader[0].ToString();
                         fc.Show();
                         this.Hide();
                     }
@@ -100,6 +102,7 @@ namespace Ayubo_Drive
                     if (dreader2[3].ToString().Equals(textBox2.Text))
                     {
                         Form_employee fe = new Form_employee();
+                        CUSTOMER_ID = dreader2[0].ToString();
                         fe.Show();
                         this.Hide();
                     }
