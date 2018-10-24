@@ -657,9 +657,9 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(75, 17);
             this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Long tours";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 

@@ -143,22 +143,36 @@ namespace Ayubo_Drive
                 int Max_Km = Convert.ToInt32(p.Max_Km);
                 int Extra_Km_Rate = Convert.ToInt32(p.Extra_Km_Rate);
                 int packagecost = Convert.ToInt32(p.Cost);
+
+
                 if (Max_Km < distance)
                 {
                     int extrakmcharge = (distance - Max_Km) * Extra_Km_Rate;
                     PrintConsole("extrakmcharge ", extrakmcharge.ToString());
-
-                    if(radioButton1.Checked==true)
-                    {
-                        label44.Text = extrakmcharge.ToString();
-
-                    }
                     if (radioButton1.Checked == true)
                     {
-                        label47.Text = extrakmcharge.ToString();
+                        label44.Text = extrakmcharge.ToString();
+                        label47.Text = "...".ToString();
+
+
                     }
+                    if (radioButton2.Checked == true)
+                    {
+                        label47.Text = extrakmcharge.ToString();
+                        label44.Text = "...".ToString();
+
+                    }
+                }
+                else
+                {
+                    label44.Text = "...".ToString();
+                    label47.Text = "...".ToString();
 
                 }
+
+
+
+
 
 
 
@@ -230,13 +244,24 @@ namespace Ayubo_Drive
 
                         
                         //hireBaseCost = Convert.ToInt32(dreader[6].ToString());
+                        if(radioButton1.Checked==true)
+                        {
+                            lblbasehirecharge.Text = BaseCost.ToString();
+                            label45.Text = "...".ToString();
 
+                        }
+                        if (radioButton2.Checked == true)
+                        {
+                            label45.Text = BaseCost.ToString();
+                            lblbasehirecharge.Text = "...".ToString();
+
+                        }
 
                     }
 
                 }
 
-                lblbasehirecharge.Text = BaseCost.ToString();
+                
 
                 dreader_1.Close();
                 m_con.Close();
@@ -435,7 +460,7 @@ namespace Ayubo_Drive
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            doCalculation_Hire();
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
@@ -480,6 +505,11 @@ namespace Ayubo_Drive
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            doCalculation_Hire();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             doCalculation_Hire();
         }
