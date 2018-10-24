@@ -32,6 +32,32 @@ namespace Ayubo_Drive
         public string C_Contact_No;
         public string C_Password;
     }
+    public class Package
+    {
+        public string P_Id;
+        public string P_Name;
+        public string Max_Km;
+        public string Max_Hr;
+        public string Extra_Km_Rate;
+        public string Extra_Hr_Rate;
+        public string Cost;
+        public string Vehicle_Night_Park_Rate_Per_Night;
+        public string Driver_Overnight_Rate_Per_Night;
+    }
+
+    public class Hire
+    {
+        public string Hire_Id;
+        public string D_Id;
+        public string C_Id;
+        public string V_Id;
+        public string V_Type_Id;
+        public string P_Id;
+        public string Base_Cost;
+    
+    }
+
+
 
     class Common
     {
@@ -99,14 +125,14 @@ namespace Ayubo_Drive
 
 
                     c.C_Id = dreader[0].ToString();
-         c.C_Name = dreader[1].ToString();
-          c.C_Address = dreader[2].ToString();
-          c.C_Email = dreader[3].ToString();
-          c.C_Contact_No = dreader[4].ToString();
-          c.C_Password = dreader[5].ToString();
+                    c.C_Name = dreader[1].ToString();
+                    c.C_Address = dreader[2].ToString();
+                    c.C_Email = dreader[3].ToString();
+                    c.C_Contact_No = dreader[4].ToString();
+                    c.C_Password = dreader[5].ToString();
 
 
-        dreader.Close();
+                    dreader.Close();
                     return c;
 
                 }
@@ -167,5 +193,101 @@ namespace Ayubo_Drive
                 m_con.Close();
             }
         }
+        public Package GetPackageById(String P_ID)
+        {
+
+            try
+            {
+
+                string sql = "select * from Package where P_Id ='" + P_ID + "' ";
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                SqlDataReader dreader = cmd.ExecuteReader();
+
+                // We are going to store vehicle data in this variable (Driver)
+                Package p = new Package();
+
+                if (dreader.Read())
+                {              
+            
+             
+                    p.P_Id = dreader[0].ToString();
+                    p.P_Name = dreader[1].ToString();
+                    p.Max_Km = dreader[2].ToString();
+                    p.Max_Hr = dreader[3].ToString();
+                    p.Extra_Km_Rate = dreader[4].ToString();
+                    p.Extra_Hr_Rate = dreader[5].ToString();
+                    p.Cost = dreader[6].ToString();
+                    p.Vehicle_Night_Park_Rate_Per_Night = dreader[7].ToString();
+                    p.Driver_Overnight_Rate_Per_Night = dreader[8].ToString();
+
+                    dreader.Close();
+                    return p;
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                m_con.Close();
+            }
+        }
+
+
+        public Hire GetHireById(String Hire_ID)
+        {
+
+            try
+            {
+
+                string sql = "select * from Package where P_Id ='" + P_ID + "' ";
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                SqlDataReader dreader = cmd.ExecuteReader();
+
+                // We are going to store vehicle data in this variable (Driver)
+                Hire h = new Hire();
+
+                if (dreader.Read())
+                {
+                    h.Hire_Id = dreader[0].ToString();
+                    h.D_Id = dreader[1].ToString();
+                    h.C_Id = dreader[2].ToString();
+                    h.V_Id = dreader[3].ToString();
+                    h.V_Type_Id = dreader[4].ToString();
+                    h.P_Id = dreader[5].ToString();
+                    h.Base_Cost = dreader[6].ToString();
+                 
+
+                    dreader.Close();
+                    return h;
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                m_con.Close();
+            }
+        }
+
+
+
     }
 }

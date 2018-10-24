@@ -63,13 +63,6 @@ namespace Ayubo_Drive
 
             //step 7 - set the sql query to the sql command
             cmd.CommandText = "Insert Into customer(C_Name,C_Address,C_Email,C_Contact_No,C_Password)values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
-            //step 8 - execute the sql command
-            cmd.ExecuteReader();
-
-
-            //step 9 - close the sql connection
-            con.Close();
-
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 textBox1.Focus();
@@ -113,10 +106,7 @@ namespace Ayubo_Drive
                 textBox5.BackColor = System.Drawing.Color.LightPink;
 
 
-            }
-
-
-            else
+            } else
             {
                 //step 10 - Display a successfull message 
               
@@ -142,6 +132,17 @@ namespace Ayubo_Drive
 
 
             }
+            //step 8 - execute the sql command
+            cmd.ExecuteReader();
+            
+           
+
+            //step 9 - close the sql connection
+            con.Close();
+           
+
+
+        
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

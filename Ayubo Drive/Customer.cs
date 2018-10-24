@@ -16,8 +16,11 @@ namespace Ayubo_Drive
 
         SqlConnection m_con = new DatabaseConnection().getConnection();
         public static int WEEKLY_RENT = 10000;
+        public static int V_Monthly_Rent = 40000;
         public Driver d;
         public Vehicle v;
+        public Package p;
+        public Hire h;
         public int days = 0;
         Common c = new Common();
         public Form_customer()
@@ -44,6 +47,9 @@ namespace Ayubo_Drive
                 PrintConsole("on Changed combo1 driverName ", driverName);
                 PrintConsole("on Changed combo1 driverId ", driverId);
 
+                string packageId = comboBox9.Text;
+                PrintConsole("on Changed combo1 packageId ", packageId);
+
 
                 DateTime d1 = dateTimePicker1.Value;
                 DateTime d2 = dateTimePicker2.Value;
@@ -62,17 +68,25 @@ namespace Ayubo_Drive
                 PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
                 PrintConsole("Vehicle V_Weekly_Rate ", v.V_Weekly_Rate.ToString());
 
+                     //lets find the no of months
+                int numberofMonths = days / 30;
+                PrintConsole("numberofMonths", numberofMonths.ToString());
+
                 // lets find the no of weeks
-                int numberOfWeeks = days / 7;
-                PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
-
-
+             
+               
+                    int numberOfWeeks = (days%30) / 7;
+                    PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
+               
                 // lets find no of remaining days
-                int remainingDays = days % 7;
-                PrintConsole("remainingDays ", remainingDays.ToString());
+    
+               
+                    int remainingDays = (days%30) % 7;
+                    PrintConsole("remainingDays ", remainingDays.ToString());
 
 
-                int totalValue = v.V_Weekly_Rate * numberOfWeeks + v.V_Rate * remainingDays; 
+
+                int totalValue = V_Monthly_Rent * numberofMonths + v.V_Weekly_Rate * numberOfWeeks + v.V_Rate * remainingDays;
                 if (radioButton_without_a_driver.Checked == true)
                 {
                      
@@ -96,8 +110,105 @@ namespace Ayubo_Drive
             }
         }
 
+        private int doCalculation_Hire()
+        {
+            if (comboBox8.SelectedValue != null && comboBox8.SelectedValue != null)
+            {
+                string vTypeName = comboBox8.Text;
+                string vTypeID = comboBox8.SelectedValue.ToString();
+                PrintConsole("on Changed combo1 vTypeName ", vTypeName);
+                PrintConsole("on Changed combo1 vTypeID ", vTypeID);
+
+                String packageName = comboBox9.Text;
+                String packageId = comboBox9.SelectedValue.ToString();
+                PrintConsole("on Changed combo1 driverName ", packageName);
+                PrintConsole("on Changed combo1 driverId ", packageId);
+
+               
+
+                string startKm = textBox4.Text;
+                PrintConsole("on Changed combo1 driverName ", startKm);
+
+                string endKm = textBox5.Text;
+                PrintConsole("on Changed combo1 driverName ", endKm);
+
+                TimeSpan t1 = TimeSpan.Parse(comboBox3.Text);
+                TimeSpan t2 = TimeSpan.Parse(comboBox2.Text);
+                TimeSpan time = t2 - t1;
+                PrintConsole("Number of hours ", time.ToString());
+
+                DateTime d3 = dateTimePicker3.Value;
+                DateTime d4 = dateTimePicker4.Value;
+                TimeSpan t = d4 - d3;
+                double dDays = t.TotalDays;
+                days = Convert.ToInt32(dDays);
+                PrintConsole("Number of days ", days.ToString());
+
+
+             
+                v = c.GetVehicleTypeById(vTypeID);
+                p = c.GetPackageById(packageId);
+                
+
+
+                PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
+                PrintConsole("Vehicle V_Weekly_Rate ", v.V_Weekly_Rate.ToString());
+
+                PrintConsole("Start km ", startKm.ToString());
+                PrintConsole("End Km ", endKm.ToString());
+
+                //lets find the no of months
+                int numberofMonths = days / 30;
+                PrintConsole("numberofMonths", numberofMonths.ToString());
+
+                // lets find the no of weeks
+
+
+                int numberOfWeeks = (days % 30) / 7;
+                PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
+
+                // lets find no of remaining days
+
+
+                int remainingDays = (days % 30) % 7;
+                PrintConsole("remainingDays ", remainingDays.ToString());
+
+
+
+                string BaseHireCharge = "SELECT Base_Cost FROM Hire WHERE (V_Type_Id='"+comboBox8.Text+"' and P_Id='"+comboBox9.Text+"') ";
+                PrintConsole("BaseHireCharge ", BaseHireCharge.ToString());
+               
+                
+        
+
+                if (radioButton_without_a_driver.Checked == true)
+                {
+
+                    PrintConsole("totalValue without driver ", totalValue.ToString());
+
+                }
+          
+                lblCost.Text = totalValue.ToString();
+                lblNoOfDays.Text = days.ToString();
+                label5.Text = v.V_Rate.ToString();
+                label49.Text = v.V_Weekly_Rate.ToString();
+                return totalValue;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+
         private void Customer_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'ayubo_driveDataSet.Package' table. You can move, or remove it, as needed.
+            this.packageTableAdapter.Fill(this.ayubo_driveDataSet.Package);
+            // TODO: This line of code loads data into the 'ayubo_driveDataSet.Rent' table. You can move, or remove it, as needed.
+            this.rentTableAdapter.Fill(this.ayubo_driveDataSet.Rent);
+            // TODO: This line of code loads data into the 'ayubo_driveDataSet.Hire' table. You can move, or remove it, as needed.
+            this.hireTableAdapter.Fill(this.ayubo_driveDataSet.Hire);
             // TODO: This line of code loads data into the 'ayubo_driveDataSet.Driver' table. You can move, or remove it, as needed.
             this.driverTableAdapter.Fill(this.ayubo_driveDataSet.Driver);
             // TODO: This line of code loads data into the 'ayubo_driveDataSet.VehicleType' table. You can move, or remove it, as needed.
@@ -257,6 +368,21 @@ namespace Ayubo_Drive
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
