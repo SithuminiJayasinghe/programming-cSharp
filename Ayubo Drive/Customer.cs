@@ -21,6 +21,7 @@ namespace Ayubo_Drive
         public int waitingcharge = 0;
         public int extrakmcharge = 0;
         public int overnightstaycharge = 0;
+        public int totalhirecost = 0;
         public int MaxKm = 0;
         public Driver d;
         public Vehicle v;
@@ -257,7 +258,7 @@ namespace Ayubo_Drive
 
                 if (dreader_1.Read())
                 {
-                    PrintConsole("Sithumini",dreader_1[5].ToString());
+                    PrintConsole("Sithumini", dreader_1[5].ToString());
                     PrintConsole("Sithumini_s", comboBox9.SelectedValue.ToString());
 
                     if (dreader_1[5].ToString().Equals(comboBox9.SelectedValue.ToString()))
@@ -265,9 +266,9 @@ namespace Ayubo_Drive
                         PrintConsole("Base_Cost ", dreader_1[6].ToString());
                         BaseCost = Convert.ToInt32(dreader_1[6].ToString());
 
-                        
+
                         //hireBaseCost = Convert.ToInt32(dreader[6].ToString());
-                        if(radioButton1.Checked==true)
+                        if (radioButton1.Checked == true)
                         {
                             lblbasehirecharge.Text = BaseCost.ToString();
                             label45.Text = "...".ToString();
@@ -280,34 +281,48 @@ namespace Ayubo_Drive
 
                         }
 
+                        dreader_1.Close();
+                        m_con.Close();
+
                     }
 
                 }
 
-                dreader_1.Close();
-                m_con.Close();
+                if (radioButton1.Checked == true)
+                {
+                    double totalhire = BaseCost + waitingcharge + extrakmcharge;
+                    PrintConsole("Day total", totalhire.ToString());
+                    label27.Text = totalhire.ToString();
+                    label50.Text = "...".ToString();
+                    int totalhirecost = Convert.ToInt32(totalhire);
+                }
 
+                if (radioButton2.Checked == true)
+                {
+                    double totalhire= BaseCost + overnightstaycharge + extrakmcharge;
+                    PrintConsole("long tour", totalhire.ToString());
+                    label50.Text = totalhire.ToString();
+                    label27.Text = "...".ToString();
+                    int totalhirecost = Convert.ToInt32(totalhire);
+                }
+                     
 
-
-
-                int totaldaytour = BaseCost + waitingcharge + extrakmcharge;
-                label27.Text = totaldaytour.ToString();
-
-                int totallongtour = BaseCost+  + extrakmcharge;
-                return totaldaytour;
-
-
+           return totalhirecost;
             }
-            else
-            { 
-                return 0;
+
+                else
+                { 
+                    return 0;
                
-            }
-
-
+                }
 
 
         }
+               
+
+
+
+        
 
 
         private void Customer_Load(object sender, EventArgs e)
@@ -599,6 +614,16 @@ namespace Ayubo_Drive
             {
                 m_con.Close();
             }
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label44_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

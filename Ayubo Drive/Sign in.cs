@@ -66,12 +66,47 @@ namespace Ayubo_Drive
                 {
                     if (dreader[5].ToString().Equals(textBox2.Text))
                     {
-                        Form_customer fc = new Form_customer();
+                        
                         USER_ID = dreader[0].ToString();
-                        fc.Show();
-                        this.Hide();
-                    }
+                       
+                        if (string.IsNullOrWhiteSpace(textBox1.Text))
+                        {
+                            textBox1.Focus();
+                            textBox1.BackColor = System.Drawing.Color.LightPink;
 
+
+
+                        }
+                        if (string.IsNullOrWhiteSpace(textBox2.Text))
+                        {
+                            textBox2.Focus();
+                            textBox2.BackColor = System.Drawing.Color.LightPink;
+
+
+
+                        }
+                        else
+                        {
+                            Form_customer fc = new Form_customer();
+                            fc.Show();
+                            this.Hide();
+                            textBox1.Clear();
+
+                            textBox2.Clear();
+
+                        }
+
+                    } 
+
+                
+
+               
+
+
+
+
+
+                    
                 }
 
                 dreader.Close();
@@ -101,17 +136,52 @@ namespace Ayubo_Drive
                 {
                     if (dreader2[3].ToString().Equals(textBox2.Text))
                     {
-                        Form_employee fe = new Form_employee();
+
                         USER_ID = dreader2[0].ToString();
+                        Form_employee fe  = new Form_employee();
                         fe.Show();
                         this.Hide();
+                        textBox1.Clear();
+                        textBox2.Clear();
                     }
-                   
+                    dreader2.Close();
+                    if (string.IsNullOrWhiteSpace(textBox2.Text))
+                    {
+                        textBox2.Focus();
+                        textBox2.BackColor = System.Drawing.Color.LightPink;
 
+
+
+                    }
+                    if (string.IsNullOrWhiteSpace(textBox2.Text))
+                    {
+                        textBox2.Focus();
+                        textBox2.BackColor = System.Drawing.Color.LightPink;
+
+
+
+                    }
+                    else
+                    {
+                        Form_employee fe = new Form_employee();
+                        fe.Show();
+                        this.Hide();
+                        textBox1.Clear();
+                        textBox2.Clear();
+                    }
+                    
+                 
+                    
+            
+
+
+
+
+            
                 }
+               
 
-              
-                dreader2.Close();
+               
             }
             catch (Exception ex)
             {

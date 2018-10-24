@@ -524,6 +524,7 @@
             this.label44.Size = new System.Drawing.Size(16, 13);
             this.label44.TabIndex = 28;
             this.label44.Text = "...";
+            this.label44.Click += new System.EventHandler(this.label44_Click);
             // 
             // label43
             // 
@@ -1058,6 +1059,7 @@
             this.label27.Size = new System.Drawing.Size(16, 13);
             this.label27.TabIndex = 38;
             this.label27.Text = "...";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // label42
             // 
