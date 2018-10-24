@@ -75,8 +75,8 @@
             this.ayubodriveDataSetBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.jobTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.JobTableAdapter();
             this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.driverIdToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.driverIdToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.driverIdToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -187,10 +187,11 @@
             this.dNameDataGridViewTextBoxColumn,
             this.durationDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.jobBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(44, 53);
+            this.dataGridView2.Location = new System.Drawing.Point(37, 38);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(593, 200);
             this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // jIdDataGridViewTextBoxColumn
             // 
@@ -480,16 +481,16 @@
             this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
             this.fillBy1ToolStrip.Visible = false;
             // 
-            // driverIdToolStripTextBox
-            // 
-            this.driverIdToolStripTextBox.Name = "driverIdToolStripTextBox";
-            this.driverIdToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
             // driverIdToolStripLabel
             // 
             this.driverIdToolStripLabel.Name = "driverIdToolStripLabel";
             this.driverIdToolStripLabel.Size = new System.Drawing.Size(51, 22);
             this.driverIdToolStripLabel.Text = "DriverId:";
+            // 
+            // driverIdToolStripTextBox
+            // 
+            this.driverIdToolStripTextBox.Name = "driverIdToolStripTextBox";
+            this.driverIdToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
             // fillBy1ToolStripButton
             // 

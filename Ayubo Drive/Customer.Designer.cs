@@ -57,8 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
@@ -98,7 +97,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -109,7 +107,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.vehicleTypeTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.VehicleTypeTableAdapter();
@@ -122,7 +119,12 @@
             this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rentTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.RentTableAdapter();
             this.packageTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.PackageTableAdapter();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -434,9 +436,13 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Thistle;
+            this.tabPage2.Controls.Add(this.label50);
+            this.tabPage2.Controls.Add(this.label42);
+            this.tabPage2.Controls.Add(this.label27);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.dateTimePicker6);
+            this.tabPage2.Controls.Add(this.dateTimePicker5);
             this.tabPage2.Controls.Add(this.dateTimePicker3);
-            this.tabPage2.Controls.Add(this.comboBox3);
-            this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.label47);
             this.tabPage2.Controls.Add(this.label46);
             this.tabPage2.Controls.Add(this.label45);
@@ -473,70 +479,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hire";
             // 
-            // comboBox3
+            // dateTimePicker3
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "01:00",
-            "02:00",
-            "04:00",
-            "05:00",
-            "06:00",
-            "07:00",
-            "08:00",
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00",
-            "21:00",
-            "22:00",
-            "23:00",
-            "24:00"});
-            this.comboBox3.Location = new System.Drawing.Point(16, 163);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 33;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged_1);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "01:00",
-            "02:00",
-            "04:00",
-            "05:00",
-            "06:00",
-            "07:00",
-            "08:00",
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00",
-            "21:00",
-            "22:00",
-            "23:00",
-            "24:00"});
-            this.comboBox2.Location = new System.Drawing.Point(188, 163);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 32;
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(363, 163);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker3.TabIndex = 34;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged_1);
             // 
             // label47
             // 
@@ -555,6 +505,7 @@
             this.label46.Size = new System.Drawing.Size(16, 13);
             this.label46.TabIndex = 30;
             this.label46.Text = "...";
+            this.label46.Click += new System.EventHandler(this.label46_Click);
             // 
             // label45
             // 
@@ -710,6 +661,7 @@
             this.button4.TabIndex = 13;
             this.button4.Text = "Order";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -841,7 +793,6 @@
             this.tabPage3.Controls.Add(this.label30);
             this.tabPage3.Controls.Add(this.label29);
             this.tabPage3.Controls.Add(this.label28);
-            this.tabPage3.Controls.Add(this.label27);
             this.tabPage3.Controls.Add(this.label26);
             this.tabPage3.Controls.Add(this.label25);
             this.tabPage3.Controls.Add(this.label24);
@@ -852,7 +803,6 @@
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.label22);
-            this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -923,15 +873,6 @@
             this.label28.Size = new System.Drawing.Size(16, 13);
             this.label28.TabIndex = 13;
             this.label28.Text = "...";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(151, 74);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(16, 13);
-            this.label27.TabIndex = 12;
-            this.label27.Text = "...";
             // 
             // label26
             // 
@@ -1024,16 +965,6 @@
             this.label22.TabIndex = 7;
             this.label22.Text = "Extra km";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(14, 74);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 13);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Vehicle required address";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -1088,13 +1019,63 @@
             // 
             this.packageTableAdapter.ClearBeforeFill = true;
             // 
-            // dateTimePicker3
+            // dateTimePicker5
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(363, 163);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker3.TabIndex = 34;
+            this.dateTimePicker5.CustomFormat = "";
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker5.Location = new System.Drawing.Point(17, 163);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(120, 20);
+            this.dateTimePicker5.TabIndex = 35;
+            this.dateTimePicker5.Value = new System.DateTime(2018, 10, 24, 23, 14, 48, 0);
+            this.dateTimePicker5.ValueChanged += new System.EventHandler(this.dateTimePicker5_ValueChanged);
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.CustomFormat = "";
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker6.Location = new System.Drawing.Point(190, 164);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(119, 20);
+            this.dateTimePicker6.TabIndex = 36;
+            this.dateTimePicker6.Value = new System.DateTime(2018, 10, 24, 23, 14, 36, 0);
+            this.dateTimePicker6.ValueChanged += new System.EventHandler(this.dateTimePicker6_ValueChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(14, 297);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(95, 13);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "Total day tour cost";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(130, 297);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(16, 13);
+            this.label27.TabIndex = 38;
+            this.label27.Text = "...";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(367, 297);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(98, 13);
+            this.label42.TabIndex = 39;
+            this.label42.Text = "Total long tour cost";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(498, 297);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(16, 13);
+            this.label50.TabIndex = 40;
+            this.label50.Text = "...";
             // 
             // Form_customer
             // 
@@ -1153,7 +1134,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -1166,7 +1146,6 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -1194,8 +1173,6 @@
         private System.Windows.Forms.BindingSource packageBindingSource;
         private Ayubo_driveDataSetTableAdapters.PackageTableAdapter packageTableAdapter;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
@@ -1226,5 +1203,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label17;
     }
 }

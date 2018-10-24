@@ -18,6 +18,9 @@ namespace Ayubo_Drive
         public static int WEEKLY_RENT = 10000;
         public static int V_Monthly_Rent = 40000;
         public int BaseCost=0;
+        public int waitingcharge = 0;
+        public int extrakmcharge = 0;
+        public int overnightstaycharge = 0;
         public int MaxKm = 0;
         public Driver d;
         public Vehicle v;
@@ -170,15 +173,50 @@ namespace Ayubo_Drive
 
                 }
 
+
+
+
+                
+                DateTime starttime = dateTimePicker5.Value;
+                DateTime endtime = dateTimePicker6.Value;
+                PrintConsole("starttime ", starttime.ToString());
+                PrintConsole("endtime ", endtime.ToString());
+
+                TimeSpan timedifference = endtime - starttime;
+                PrintConsole("timedifference ", timedifference.ToString());
+
+                double tdf = timedifference.TotalHours;
+                PrintConsole("tdf ", tdf.ToString());
+
+            
+                p = c.GetPackageById(packageId);
+
+                int Extra_Hr_Rate = Convert.ToInt32(p.Extra_Hr_Rate);
+                PrintConsole("Extra hr rate ", p.Extra_Hr_Rate.ToString());
+                int Max_Hr = Convert.ToInt32(p.Max_Hr);
+
+                if (tdf > Max_Hr)
+                {
+                    double waitingcharge = (tdf - Max_Hr) * Extra_Hr_Rate;
+                    PrintConsole("waitingcharge ", waitingcharge.ToString());
+
+
+                    if (radioButton1.Checked == true)
+                    {
+                        label43.Text = Math.Round(waitingcharge,2).ToString();
+
+                    }
+                    if (radioButton2.Checked == true)
+                    {
+                        label43.Text = "...".ToString();
+
+                    }
+
+                }
+
                 
 
 
-                //TimeSpan t1 = TimeSpan.Parse(dateTimePicker3.Value);
-                //TimeSpan t2 = TimeSpan.Parse(dateTimePicker4.Value);
-                //TimeSpan tt = t2 - t1;
-                //double tTime = tt.TotalHours;
-                //int totalTime = Convert.ToInt32(tTime);
-                //PrintConsole("Number of hours ", totalTime.ToString());
 
                 DateTime d3 = dateTimePicker3.Value;
                 DateTime d4 = dateTimePicker4.Value;
@@ -187,10 +225,6 @@ namespace Ayubo_Drive
                 days = Convert.ToInt32(dDays);
                 PrintConsole("Number of days ", days.ToString());
                 
-
-
-
-
                 v = c.GetVehicleTypeById(vTypeID);
                 p = c.GetPackageById(packageId);
                 h = c.GetHireById(vTypeID);
@@ -205,25 +239,13 @@ namespace Ayubo_Drive
                     {
                         label46.Text = overnightstaycharge.ToString();
                     }
+                    if(radioButton1.Checked==true)
+                    {
+                        label46.Text = "...".ToString();
+                    }
                 }
 
-
-
-
-                ////lets find the no of months
-                //int numberofMonths = days / 30;
-                //PrintConsole("numberofMonths", numberofMonths.ToString());
-
-                //// lets find the no of weeks
-                //int numberOfWeeks = (days % 30) / 7;
-                //PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
-
-                //// lets find no of remaining days
-                //int remainingDays = (days % 30) % 7;
-                //PrintConsole("remainingDays ", remainingDays.ToString());
-
-
-
+               
 
 
 
@@ -262,20 +284,29 @@ namespace Ayubo_Drive
 
                 }
 
-                
-
                 dreader_1.Close();
                 m_con.Close();
 
-                return BaseCost;
 
-            
+
+
+                int totaldaytour = BaseCost + waitingcharge + extrakmcharge;
+                label27.Text = totaldaytour.ToString();
+
+                int totallongtour = BaseCost+  + extrakmcharge;
+                return totaldaytour;
+
+
             }
             else
             { 
                 return 0;
                
             }
+
+
+
+
         }
 
 
@@ -452,6 +483,7 @@ namespace Ayubo_Drive
 
         private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            doCalculation_Hire();
 
 
 
@@ -502,7 +534,7 @@ namespace Ayubo_Drive
 
         private void label43_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -513,6 +545,60 @@ namespace Ayubo_Drive
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             doCalculation_Hire();
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            doCalculation_Hire();
+          
+
+        }
+
+        private void dateTimePicker3_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker5_ValueChanged(object sender, EventArgs e)
+        {
+            doCalculation_Hire();
+        }
+
+        private void dateTimePicker6_ValueChanged(object sender, EventArgs e)
+        {
+            doCalculation_Hire();
+        }
+
+        private void label46_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
+                int total = doCalulation();
+                string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Rent'," + total + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'" + d.D_NAME + "','" + days + "');";
+
+                Console.WriteLine(sql);
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+
+                MessageBox.Show("Successfully added new order");
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
         }
     }
 }
