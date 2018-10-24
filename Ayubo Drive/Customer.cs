@@ -170,18 +170,7 @@ namespace Ayubo_Drive
 
                 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+                
 
 
                 //TimeSpan t1 = TimeSpan.Parse(dateTimePicker3.Value);
@@ -199,29 +188,41 @@ namespace Ayubo_Drive
                 PrintConsole("Number of days ", days.ToString());
                 
 
+
+
+
                 v = c.GetVehicleTypeById(vTypeID);
                 p = c.GetPackageById(packageId);
                 h = c.GetHireById(vTypeID);
+                int vehicle_night_park_rate = Convert.ToInt32(p.Vehicle_Night_Park_Rate_Per_Night);
+                int driver_overnight_rate = Convert.ToInt32(p.Driver_Overnight_Rate_Per_Night);
+                if (days>=2)
+                {
+                    int overnightstaycharge = (days * vehicle_night_park_rate) + (days * driver_overnight_rate);
+                    PrintConsole("overnightstaycharge ", overnightstaycharge.ToString());
+
+                    if(radioButton2.Checked==true)
+                    {
+                        label46.Text = overnightstaycharge.ToString();
+                    }
+                }
 
 
 
-                PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
-                PrintConsole("Vehicle V_Weekly_Rate ", v.V_Weekly_Rate.ToString());
 
-          
-                //lets find the no of months
-                int numberofMonths = days / 30;
-                PrintConsole("numberofMonths", numberofMonths.ToString());
+                ////lets find the no of months
+                //int numberofMonths = days / 30;
+                //PrintConsole("numberofMonths", numberofMonths.ToString());
 
-                // lets find the no of weeks
-                int numberOfWeeks = (days % 30) / 7;
-                PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
+                //// lets find the no of weeks
+                //int numberOfWeeks = (days % 30) / 7;
+                //PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
 
-                // lets find no of remaining days
-                int remainingDays = (days % 30) % 7;
-                PrintConsole("remainingDays ", remainingDays.ToString());
+                //// lets find no of remaining days
+                //int remainingDays = (days % 30) % 7;
+                //PrintConsole("remainingDays ", remainingDays.ToString());
 
-               
+
 
 
 
