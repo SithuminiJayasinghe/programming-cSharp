@@ -13,10 +13,11 @@ namespace Ayubo_Drive
 {
     public partial class Form_customer : Form
     {
-
+       
         SqlConnection m_con = new DatabaseConnection().getConnection();
         public static int WEEKLY_RENT = 10000;
         public static int V_Monthly_Rent = 40000;
+        public int BaseCost=0;
         public Driver d;
         public Vehicle v;
         public Package p;
@@ -112,19 +113,19 @@ namespace Ayubo_Drive
 
         private int doCalculation_Hire()
         {
-            if (comboBox8.SelectedValue != null && comboBox8.SelectedValue != null)
+            if (comboBox8.SelectedValue != null && comboBox9.SelectedValue != null)
             {
                 string vTypeName = comboBox8.Text;
                 string vTypeID = comboBox8.SelectedValue.ToString();
                 PrintConsole("on Changed combo1 vTypeName ", vTypeName);
                 PrintConsole("on Changed combo1 vTypeID ", vTypeID);
 
-                String packageName = comboBox9.Text;
-                String packageId = comboBox9.SelectedValue.ToString();
+         
+
+                string packageName = comboBox9.Text;
+                string packageId = comboBox9.SelectedValue.ToString();
                 PrintConsole("on Changed combo1 driverName ", packageName);
                 PrintConsole("on Changed combo1 driverId ", packageId);
-
-               
 
                 string startKm = textBox4.Text;
                 PrintConsole("on Changed combo1 driverName ", startKm);
@@ -132,10 +133,12 @@ namespace Ayubo_Drive
                 string endKm = textBox5.Text;
                 PrintConsole("on Changed combo1 driverName ", endKm);
 
-                TimeSpan t1 = TimeSpan.Parse(comboBox3.Text);
-                TimeSpan t2 = TimeSpan.Parse(comboBox2.Text);
-                TimeSpan time = t2 - t1;
-                PrintConsole("Number of hours ", time.ToString());
+                TimeSpan t1 = TimeSpan.Parse(comboBox3.SelectedText);
+                TimeSpan t2 = TimeSpan.Parse(comboBox2.SelectedText);
+                TimeSpan tt = t2 - t1;
+                double tTime = tt.TotalHours;
+                int totalTime = Convert.ToInt32(tTime);
+                PrintConsole("Number of hours ", totalTime.ToString());
 
                 DateTime d3 = dateTimePicker3.Value;
                 DateTime d4 = dateTimePicker4.Value;
@@ -145,10 +148,11 @@ namespace Ayubo_Drive
                 PrintConsole("Number of days ", days.ToString());
 
 
-             
+
                 v = c.GetVehicleTypeById(vTypeID);
                 p = c.GetPackageById(packageId);
-                
+                h = c.GetHireById(vTypeID);
+
 
 
                 PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
@@ -162,41 +166,50 @@ namespace Ayubo_Drive
                 PrintConsole("numberofMonths", numberofMonths.ToString());
 
                 // lets find the no of weeks
-
-
                 int numberOfWeeks = (days % 30) / 7;
                 PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
 
                 // lets find no of remaining days
-
-
                 int remainingDays = (days % 30) % 7;
                 PrintConsole("remainingDays ", remainingDays.ToString());
 
-
-
-                string BaseHireCharge = "SELECT Base_Cost FROM Hire WHERE (V_Type_Id='"+comboBox8.Text+"' and P_Id='"+comboBox9.Text+"') ";
-                PrintConsole("BaseHireCharge ", BaseHireCharge.ToString());
                
-                
-        
+                h = c.GetHireById(vTypeID);
+                string sql = "select * from Hire where V_Type_Id ='" + comboBox8.SelectedValue + "' ";
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                SqlDataReader dreader = cmd.ExecuteReader();
 
-                if (radioButton_without_a_driver.Checked == true)
+                if (dreader.Read())
                 {
+                    PrintConsole("Sithumini",dreader[5].ToString());
+                    PrintConsole("Sithumini_s", comboBox9.SelectedValue.ToString());
 
-                    PrintConsole("totalValue without driver ", totalValue.ToString());
+                    if (dreader[5].ToString().Equals(comboBox9.SelectedValue.ToString()))
+                    {
+                        PrintConsole("Base_Cost ", dreader[6].ToString());
+                        BaseCost = Convert.ToInt32(dreader[6].ToString());
+
+                        
+                        //hireBaseCost = Convert.ToInt32(dreader[6].ToString());
+
+
+                    }
 
                 }
-          
-                lblCost.Text = totalValue.ToString();
-                lblNoOfDays.Text = days.ToString();
-                label5.Text = v.V_Rate.ToString();
-                label49.Text = v.V_Weekly_Rate.ToString();
-                return totalValue;
+
+                lblbasehirecharge.Text = BaseCost.ToString();
+
+                dreader.Close();
+                m_con.Close();
+
+                return BaseCost;
+
             }
             else
-            {
+            { 
                 return 0;
+               
             }
         }
 
@@ -384,7 +397,38 @@ namespace Ayubo_Drive
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
+            doCalculation_Hire();
+        }
 
+        private void label42_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            doCalculation_Hire();
+            
+        }
+
+        private void lblNoOfDays_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            doCalculation_Hire();
+
+        }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+            doCalculation_Hire();
         }
     }
 }

@@ -248,7 +248,7 @@ namespace Ayubo_Drive
             try
             {
 
-                string sql = "select * from Package where P_Id ='" + P_ID + "' ";
+                string sql = "select * from Hire where Hire_Id ='" + Hire_ID + "' ";
                 SqlCommand cmd = new SqlCommand(sql, m_con);
                 m_con.Open();
                 SqlDataReader dreader = cmd.ExecuteReader();

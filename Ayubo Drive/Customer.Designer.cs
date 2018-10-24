@@ -56,38 +56,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label36 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicleTypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -113,16 +83,46 @@
             this.vehicleTypeTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.VehicleTypeTableAdapter();
             this.vehicleTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.driverTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.DriverTableAdapter();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.ayubodriveDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.hireBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hireTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.HireTableAdapter();
             this.ayubodriveDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rentTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.RentTableAdapter();
-            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.packageTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.PackageTableAdapter();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.lblbasehirecharge = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,7 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource1)).BeginInit();
@@ -139,7 +139,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hireBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -238,6 +238,7 @@
             this.label5.Size = new System.Drawing.Size(16, 13);
             this.label5.TabIndex = 30;
             this.label5.Text = "...";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblNoOfDays
             // 
@@ -247,6 +248,7 @@
             this.lblNoOfDays.Size = new System.Drawing.Size(16, 13);
             this.lblNoOfDays.TabIndex = 28;
             this.lblNoOfDays.Text = "...";
+            this.lblNoOfDays.Click += new System.EventHandler(this.lblNoOfDays_Click);
             // 
             // label2
             // 
@@ -429,335 +431,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Vehicle type";
             // 
-            // tabPage2
+            // packageBindingSource
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Thistle;
-            this.tabPage2.Controls.Add(this.comboBox3);
-            this.tabPage2.Controls.Add(this.comboBox2);
-            this.tabPage2.Controls.Add(this.label47);
-            this.tabPage2.Controls.Add(this.label46);
-            this.tabPage2.Controls.Add(this.label45);
-            this.tabPage2.Controls.Add(this.label44);
-            this.tabPage2.Controls.Add(this.label43);
-            this.tabPage2.Controls.Add(this.label42);
-            this.tabPage2.Controls.Add(this.label41);
-            this.tabPage2.Controls.Add(this.label40);
-            this.tabPage2.Controls.Add(this.label39);
-            this.tabPage2.Controls.Add(this.dateTimePicker4);
-            this.tabPage2.Controls.Add(this.dateTimePicker3);
-            this.tabPage2.Controls.Add(this.label38);
-            this.tabPage2.Controls.Add(this.label37);
-            this.tabPage2.Controls.Add(this.radioButton2);
-            this.tabPage2.Controls.Add(this.radioButton1);
-            this.tabPage2.Controls.Add(this.label36);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.label35);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.comboBox9);
-            this.tabPage2.Controls.Add(this.comboBox8);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(679, 376);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Hire";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(498, 251);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(16, 13);
-            this.label47.TabIndex = 31;
-            this.label47.Text = "...";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(498, 229);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(16, 13);
-            this.label46.TabIndex = 30;
-            this.label46.Text = "...";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(498, 205);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(16, 13);
-            this.label45.TabIndex = 29;
-            this.label45.Text = "...";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(130, 251);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(16, 13);
-            this.label44.TabIndex = 28;
-            this.label44.Text = "...";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(130, 227);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(16, 13);
-            this.label43.TabIndex = 27;
-            this.label43.Text = "...";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(130, 205);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(16, 13);
-            this.label42.TabIndex = 26;
-            this.label42.Text = "...";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(367, 251);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(84, 13);
-            this.label41.TabIndex = 25;
-            this.label41.Text = "Extra km charge";
-            this.label41.Click += new System.EventHandler(this.label41_Click);
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(367, 227);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(111, 13);
-            this.label40.TabIndex = 24;
-            this.label40.Text = "Overnight stay charge";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(367, 205);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(96, 13);
-            this.label39.TabIndex = 23;
-            this.label39.Text = "Base hire charge...";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(534, 164);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(102, 20);
-            this.dateTimePicker4.TabIndex = 22;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(363, 164);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker3.TabIndex = 21;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(533, 148);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(50, 13);
-            this.label38.TabIndex = 20;
-            this.label38.Text = "End date";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(360, 148);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(53, 13);
-            this.label37.TabIndex = 19;
-            this.label37.Text = "Start date";
-            this.label37.Click += new System.EventHandler(this.label37_Click);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(363, 117);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(75, 17);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Long tours";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(17, 117);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(70, 17);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Day tours";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(14, 251);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(84, 13);
-            this.label36.TabIndex = 16;
-            this.label36.Text = "Extra km charge";
-            this.label36.Click += new System.EventHandler(this.label36_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(536, 49);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 15;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(533, 32);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(43, 13);
-            this.label35.TabIndex = 14;
-            this.label35.Text = "End km";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(560, 327);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 43);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Order";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(17, 347);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 227);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 13);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Waiting charge...";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(363, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.DataSource = this.packageBindingSource;
-            this.comboBox9.DisplayMember = "P_Name";
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(188, 48);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 21);
-            this.comboBox9.TabIndex = 7;
-            this.comboBox9.ValueMember = "P_Id";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.DataSource = this.vehicleTypeBindingSource2;
-            this.comboBox8.DisplayMember = "V_Type_Name";
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(16, 48);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 21);
-            this.comboBox8.TabIndex = 6;
-            this.comboBox8.ValueMember = "V_Type_Id";
-            this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
+            this.packageBindingSource.DataMember = "Package";
+            this.packageBindingSource.DataSource = this.ayubo_driveDataSet;
             // 
             // vehicleTypeBindingSource2
             // 
             this.vehicleTypeBindingSource2.DataMember = "VehicleType";
             this.vehicleTypeBindingSource2.DataSource = this.ayubo_driveDataSet;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 205);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 13);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Base hire charge...";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(360, 32);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 13);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Start km";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(187, 148);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "End time";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(185, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Package";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 148);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Start time";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Vehicle type";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // tabPage3
             // 
@@ -984,6 +666,325 @@
             // 
             this.driverTableAdapter.ClearBeforeFill = true;
             // 
+            // ayubodriveDataSetBindingSource1
+            // 
+            this.ayubodriveDataSetBindingSource1.DataSource = this.ayubo_driveDataSet;
+            this.ayubodriveDataSetBindingSource1.Position = 0;
+            // 
+            // hireBindingSource
+            // 
+            this.hireBindingSource.DataMember = "Hire";
+            this.hireBindingSource.DataSource = this.ayubo_driveDataSet;
+            // 
+            // hireTableAdapter
+            // 
+            this.hireTableAdapter.ClearBeforeFill = true;
+            // 
+            // ayubodriveDataSetBindingSource2
+            // 
+            this.ayubodriveDataSetBindingSource2.DataSource = this.ayubo_driveDataSet;
+            this.ayubodriveDataSetBindingSource2.Position = 0;
+            // 
+            // rentBindingSource
+            // 
+            this.rentBindingSource.DataMember = "Rent";
+            this.rentBindingSource.DataSource = this.ayubo_driveDataSet;
+            // 
+            // rentTableAdapter
+            // 
+            this.rentTableAdapter.ClearBeforeFill = true;
+            // 
+            // packageTableAdapter
+            // 
+            this.packageTableAdapter.ClearBeforeFill = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Vehicle type";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 148);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Start time";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(185, 32);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Package";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(187, 148);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "End time";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(360, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 13);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Start km";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(14, 205);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 13);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Base hire charge...";
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.DataSource = this.vehicleTypeBindingSource2;
+            this.comboBox8.DisplayMember = "V_Type_Name";
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(16, 48);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(121, 21);
+            this.comboBox8.TabIndex = 6;
+            this.comboBox8.ValueMember = "V_Type_Id";
+            this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.DataSource = this.packageBindingSource;
+            this.comboBox9.DisplayMember = "P_Name";
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(188, 48);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(121, 21);
+            this.comboBox9.TabIndex = 7;
+            this.comboBox9.ValueMember = "P_Id";
+            this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(363, 49);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 10;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(14, 227);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Waiting charge...";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(17, 347);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Back";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(560, 327);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(104, 43);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Order";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(533, 32);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(43, 13);
+            this.label35.TabIndex = 14;
+            this.label35.Text = "End km";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(536, 49);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 15;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(14, 251);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(84, 13);
+            this.label36.TabIndex = 16;
+            this.label36.Text = "Extra km charge";
+            this.label36.Click += new System.EventHandler(this.label36_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(17, 117);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(70, 17);
+            this.radioButton1.TabIndex = 17;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Day tours";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(363, 117);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(75, 17);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Long tours";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(360, 148);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(53, 13);
+            this.label37.TabIndex = 19;
+            this.label37.Text = "Start date";
+            this.label37.Click += new System.EventHandler(this.label37_Click);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(533, 148);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(50, 13);
+            this.label38.TabIndex = 20;
+            this.label38.Text = "End date";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(363, 164);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker3.TabIndex = 21;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker4.Location = new System.Drawing.Point(534, 164);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(102, 20);
+            this.dateTimePicker4.TabIndex = 22;
+            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(367, 205);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(96, 13);
+            this.label39.TabIndex = 23;
+            this.label39.Text = "Base hire charge...";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(367, 227);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(111, 13);
+            this.label40.TabIndex = 24;
+            this.label40.Text = "Overnight stay charge";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(367, 251);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(84, 13);
+            this.label41.TabIndex = 25;
+            this.label41.Text = "Extra km charge";
+            this.label41.Click += new System.EventHandler(this.label41_Click);
+            // 
+            // lblbasehirecharge
+            // 
+            this.lblbasehirecharge.AutoSize = true;
+            this.lblbasehirecharge.Location = new System.Drawing.Point(130, 205);
+            this.lblbasehirecharge.Name = "lblbasehirecharge";
+            this.lblbasehirecharge.Size = new System.Drawing.Size(16, 13);
+            this.lblbasehirecharge.TabIndex = 26;
+            this.lblbasehirecharge.Text = "...";
+            this.lblbasehirecharge.Click += new System.EventHandler(this.label42_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(130, 227);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(16, 13);
+            this.label43.TabIndex = 27;
+            this.label43.Text = "...";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(130, 251);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(16, 13);
+            this.label44.TabIndex = 28;
+            this.label44.Text = "...";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(498, 205);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(16, 13);
+            this.label45.TabIndex = 29;
+            this.label45.Text = "...";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(498, 229);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(16, 13);
+            this.label46.TabIndex = 30;
+            this.label46.Text = "...";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(498, 251);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(16, 13);
+            this.label47.TabIndex = 31;
+            this.label47.Text = "...";
+            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -1049,42 +1050,47 @@
             this.comboBox3.TabIndex = 33;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged_1);
             // 
-            // ayubodriveDataSetBindingSource1
+            // tabPage2
             // 
-            this.ayubodriveDataSetBindingSource1.DataSource = this.ayubo_driveDataSet;
-            this.ayubodriveDataSetBindingSource1.Position = 0;
-            // 
-            // hireBindingSource
-            // 
-            this.hireBindingSource.DataMember = "Hire";
-            this.hireBindingSource.DataSource = this.ayubo_driveDataSet;
-            // 
-            // hireTableAdapter
-            // 
-            this.hireTableAdapter.ClearBeforeFill = true;
-            // 
-            // ayubodriveDataSetBindingSource2
-            // 
-            this.ayubodriveDataSetBindingSource2.DataSource = this.ayubo_driveDataSet;
-            this.ayubodriveDataSetBindingSource2.Position = 0;
-            // 
-            // rentBindingSource
-            // 
-            this.rentBindingSource.DataMember = "Rent";
-            this.rentBindingSource.DataSource = this.ayubo_driveDataSet;
-            // 
-            // rentTableAdapter
-            // 
-            this.rentTableAdapter.ClearBeforeFill = true;
-            // 
-            // packageBindingSource
-            // 
-            this.packageBindingSource.DataMember = "Package";
-            this.packageBindingSource.DataSource = this.ayubo_driveDataSet;
-            // 
-            // packageTableAdapter
-            // 
-            this.packageTableAdapter.ClearBeforeFill = true;
+            this.tabPage2.BackColor = System.Drawing.Color.Thistle;
+            this.tabPage2.Controls.Add(this.comboBox3);
+            this.tabPage2.Controls.Add(this.comboBox2);
+            this.tabPage2.Controls.Add(this.label47);
+            this.tabPage2.Controls.Add(this.label46);
+            this.tabPage2.Controls.Add(this.label45);
+            this.tabPage2.Controls.Add(this.label44);
+            this.tabPage2.Controls.Add(this.label43);
+            this.tabPage2.Controls.Add(this.lblbasehirecharge);
+            this.tabPage2.Controls.Add(this.label41);
+            this.tabPage2.Controls.Add(this.label40);
+            this.tabPage2.Controls.Add(this.label39);
+            this.tabPage2.Controls.Add(this.dateTimePicker4);
+            this.tabPage2.Controls.Add(this.dateTimePicker3);
+            this.tabPage2.Controls.Add(this.label38);
+            this.tabPage2.Controls.Add(this.label37);
+            this.tabPage2.Controls.Add(this.radioButton2);
+            this.tabPage2.Controls.Add(this.radioButton1);
+            this.tabPage2.Controls.Add(this.label36);
+            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.label35);
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.comboBox9);
+            this.tabPage2.Controls.Add(this.comboBox8);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(679, 376);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Hire";
             // 
             // Form_customer
             // 
@@ -1105,8 +1111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -1115,7 +1120,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hireBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1136,19 +1142,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label20;
@@ -1173,24 +1166,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label42;
         private System.Windows.Forms.BindingSource ayubodriveDataSetBindingSource;
         private Ayubo_driveDataSet ayubo_driveDataSet;
         private System.Windows.Forms.BindingSource vehicleTypeBindingSource;
@@ -1206,8 +1181,6 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource vehicleTypeBindingSource2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.BindingSource ayubodriveDataSetBindingSource1;
         private System.Windows.Forms.BindingSource hireBindingSource;
         private Ayubo_driveDataSetTableAdapters.HireTableAdapter hireTableAdapter;
@@ -1216,5 +1189,38 @@
         private Ayubo_driveDataSetTableAdapters.RentTableAdapter rentTableAdapter;
         private System.Windows.Forms.BindingSource packageBindingSource;
         private Ayubo_driveDataSetTableAdapters.PackageTableAdapter packageTableAdapter;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label lblbasehirecharge;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
