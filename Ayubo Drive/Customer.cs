@@ -18,6 +18,7 @@ namespace Ayubo_Drive
         public static int WEEKLY_RENT = 10000;
         public static int V_Monthly_Rent = 40000;
         public int BaseCost=0;
+        public int MaxKm = 0;
         public Driver d;
         public Vehicle v;
         public Package p;
@@ -120,25 +121,61 @@ namespace Ayubo_Drive
                 PrintConsole("on Changed combo1 vTypeName ", vTypeName);
                 PrintConsole("on Changed combo1 vTypeID ", vTypeID);
 
-         
-
                 string packageName = comboBox9.Text;
                 string packageId = comboBox9.SelectedValue.ToString();
                 PrintConsole("on Changed combo1 driverName ", packageName);
                 PrintConsole("on Changed combo1 driverId ", packageId);
 
                 string startKm = textBox4.Text;
-                PrintConsole("on Changed combo1 driverName ", startKm);
+                PrintConsole("Start km ", startKm.ToString());
 
                 string endKm = textBox5.Text;
-                PrintConsole("on Changed combo1 driverName ", endKm);
+                PrintConsole("End km ", endKm.ToString());
 
-                TimeSpan t1 = TimeSpan.Parse(comboBox3.SelectedText);
-                TimeSpan t2 = TimeSpan.Parse(comboBox2.SelectedText);
-                TimeSpan tt = t2 - t1;
-                double tTime = tt.TotalHours;
-                int totalTime = Convert.ToInt32(tTime);
-                PrintConsole("Number of hours ", totalTime.ToString());
+                int sk = Convert.ToInt32(startKm);
+                int ek = Convert.ToInt32(endKm);
+
+                int distance = ek - sk;
+                PrintConsole("Distance ", distance.ToString());
+
+                p=c.GetPackageById(packageId);
+                PrintConsole("MaxKm ", p.Max_Km.ToString());
+                int Max_Km = Convert.ToInt32(p.Max_Km);
+                int Extra_Km_Rate = Convert.ToInt32(p.Extra_Km_Rate);
+                int packagecost = Convert.ToInt32(p.Cost);
+                if (Max_Km < distance)
+                {
+                    int extrakmcharge = (distance - Max_Km) * Extra_Km_Rate;
+                    PrintConsole("extrakmcharge ", extrakmcharge.ToString());
+
+                    if(radioButton1.Checked==true)
+                    {
+                        label44.Text = extrakmcharge.ToString();
+
+                    }
+                    if (radioButton1.Checked == true)
+                    {
+                        label47.Text = extrakmcharge.ToString();
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+                //TimeSpan t1 = TimeSpan.Parse(dateTimePicker3.Value);
+                //TimeSpan t2 = TimeSpan.Parse(dateTimePicker4.Value);
+                //TimeSpan tt = t2 - t1;
+                //double tTime = tt.TotalHours;
+                //int totalTime = Convert.ToInt32(tTime);
+                //PrintConsole("Number of hours ", totalTime.ToString());
 
                 DateTime d3 = dateTimePicker3.Value;
                 DateTime d4 = dateTimePicker4.Value;
@@ -146,8 +183,7 @@ namespace Ayubo_Drive
                 double dDays = t.TotalDays;
                 days = Convert.ToInt32(dDays);
                 PrintConsole("Number of days ", days.ToString());
-
-
+                
 
                 v = c.GetVehicleTypeById(vTypeID);
                 p = c.GetPackageById(packageId);
@@ -158,9 +194,7 @@ namespace Ayubo_Drive
                 PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
                 PrintConsole("Vehicle V_Weekly_Rate ", v.V_Weekly_Rate.ToString());
 
-                PrintConsole("Start km ", startKm.ToString());
-                PrintConsole("End Km ", endKm.ToString());
-
+          
                 //lets find the no of months
                 int numberofMonths = days / 30;
                 PrintConsole("numberofMonths", numberofMonths.ToString());
@@ -174,21 +208,25 @@ namespace Ayubo_Drive
                 PrintConsole("remainingDays ", remainingDays.ToString());
 
                
-                h = c.GetHireById(vTypeID);
-                string sql = "select * from Hire where V_Type_Id ='" + comboBox8.SelectedValue + "' ";
-                SqlCommand cmd = new SqlCommand(sql, m_con);
-                m_con.Open();
-                SqlDataReader dreader = cmd.ExecuteReader();
 
-                if (dreader.Read())
+
+
+
+                h = c.GetHireById(vTypeID);
+                string sql_1 = "select * from Hire where V_Type_Id ='" + comboBox8.SelectedValue + "' ";
+                SqlCommand cmd_1 = new SqlCommand(sql_1, m_con);
+                m_con.Open();
+                SqlDataReader dreader_1 = cmd_1.ExecuteReader();
+
+                if (dreader_1.Read())
                 {
-                    PrintConsole("Sithumini",dreader[5].ToString());
+                    PrintConsole("Sithumini",dreader_1[5].ToString());
                     PrintConsole("Sithumini_s", comboBox9.SelectedValue.ToString());
 
-                    if (dreader[5].ToString().Equals(comboBox9.SelectedValue.ToString()))
+                    if (dreader_1[5].ToString().Equals(comboBox9.SelectedValue.ToString()))
                     {
-                        PrintConsole("Base_Cost ", dreader[6].ToString());
-                        BaseCost = Convert.ToInt32(dreader[6].ToString());
+                        PrintConsole("Base_Cost ", dreader_1[6].ToString());
+                        BaseCost = Convert.ToInt32(dreader_1[6].ToString());
 
                         
                         //hireBaseCost = Convert.ToInt32(dreader[6].ToString());
@@ -200,11 +238,12 @@ namespace Ayubo_Drive
 
                 lblbasehirecharge.Text = BaseCost.ToString();
 
-                dreader.Close();
+                dreader_1.Close();
                 m_con.Close();
 
                 return BaseCost;
 
+            
             }
             else
             { 
@@ -337,7 +376,7 @@ namespace Ayubo_Drive
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
+            doCalculation_Hire();
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -388,6 +427,10 @@ namespace Ayubo_Drive
         private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+
+
+
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -427,6 +470,16 @@ namespace Ayubo_Drive
         }
 
         private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+            doCalculation_Hire();
+        }
+
+        private void label43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
             doCalculation_Hire();
         }
