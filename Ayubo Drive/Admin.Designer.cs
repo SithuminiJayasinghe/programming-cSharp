@@ -35,7 +35,6 @@
             this.jobTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.JobTableAdapter();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -65,6 +64,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -114,7 +114,10 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
@@ -157,13 +160,14 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(768, 362);
+            this.tabPage7.Size = new System.Drawing.Size(497, 344);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Drivers";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button15);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.button5);
@@ -183,27 +187,19 @@
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(137, 43);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Auto generated";
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(254, 271);
+            this.button4.Location = new System.Drawing.Point(277, 270);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 17;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(140, 270);
+            this.button5.Location = new System.Drawing.Point(196, 270);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 24);
             this.button5.TabIndex = 16;
@@ -299,13 +295,14 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(768, 362);
+            this.tabPage6.Size = new System.Drawing.Size(497, 344);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Vehicle types";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button14);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textBox1);
@@ -379,21 +376,23 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(254, 270);
+            this.button8.Location = new System.Drawing.Point(277, 271);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 11;
             this.button8.Text = "Delete";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(140, 269);
+            this.button9.Location = new System.Drawing.Point(196, 270);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 24);
             this.button9.TabIndex = 10;
             this.button9.Text = "Update";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button16
             // 
@@ -445,7 +444,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 362);
+            this.tabPage3.Size = new System.Drawing.Size(497, 344);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Vehicles";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -465,6 +464,16 @@
             this.groupBox1.Size = new System.Drawing.Size(370, 242);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(115, 169);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 8;
+            this.button13.Text = "Fill";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox12
             // 
@@ -518,6 +527,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -679,7 +689,7 @@
             this.tab1.Location = new System.Drawing.Point(12, 12);
             this.tab1.Name = "tab1";
             this.tab1.SelectedIndex = 0;
-            this.tab1.Size = new System.Drawing.Size(776, 388);
+            this.tab1.Size = new System.Drawing.Size(505, 370);
             this.tab1.TabIndex = 0;
             // 
             // tabPage4
@@ -688,13 +698,14 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(768, 362);
+            this.tabPage4.Size = new System.Drawing.Size(497, 344);
             this.tabPage4.TabIndex = 7;
             this.tabPage4.Text = "Packages";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button17);
             this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.button12);
@@ -720,13 +731,13 @@
             this.groupBox4.Controls.Add(this.label33);
             this.groupBox4.Location = new System.Drawing.Point(25, 7);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(718, 348);
+            this.groupBox4.Size = new System.Drawing.Size(504, 348);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(256, 310);
+            this.button10.Location = new System.Drawing.Point(276, 310);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 25;
@@ -735,7 +746,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(144, 309);
+            this.button11.Location = new System.Drawing.Point(195, 309);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 24);
             this.button11.TabIndex = 24;
@@ -913,21 +924,49 @@
             this.label33.TabIndex = 3;
             this.label33.Text = "Maximum hours";
             // 
-            // button13
+            // button14
             // 
-            this.button13.Location = new System.Drawing.Point(115, 169);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 8;
-            this.button13.Text = "Fill";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button14.Location = new System.Drawing.Point(115, 270);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 18;
+            this.button14.Text = "Fill";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(115, 270);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 19;
+            this.button15.Text = "Fill";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(114, 310);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 23);
+            this.button17.TabIndex = 26;
+            this.button17.Text = "Fill";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(137, 43);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Auto generated";
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 428);
+            this.ClientSize = new System.Drawing.Size(557, 404);
             this.Controls.Add(this.tab1);
             this.Name = "Admin";
             this.Text = "Admin";
@@ -1040,8 +1079,11 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label11;
     }
 }

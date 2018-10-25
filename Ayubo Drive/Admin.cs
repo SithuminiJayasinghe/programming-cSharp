@@ -127,7 +127,7 @@ namespace Ayubo_Drive
         {
             try
             {
-                string sql = "INSERT Driver VALUES ('" + textBox23.Text + "'," + textBox22.Text + "," + textBox20.Text + "," + textBox21.Text + ") ";
+                string sql = "INSERT into Driver VALUES ('" + textBox23.Text + "'," + textBox22.Text + "," + textBox20.Text + "," + textBox21.Text + ") ";
 
                 SqlCommand cmd = new SqlCommand(sql, m_con);
                 m_con.Open();
@@ -155,7 +155,7 @@ namespace Ayubo_Drive
 
             try
             {
-                string sql = "INSERT Packages VALUES (" + textBox29.Text + ".'" + textBox28.Text + "'," + textBox27.Text + "," + textBox26.Text + "," + textBox25.Text + "," + textBox19.Text + "," + textBox18.Text + "," + textBox17.Text + "," + textBox16.Text + "," + textBox15.Text + ") ";
+                string sql = "INSERT INTO Package VALUES (" + textBox29.Text + ".'" + textBox28.Text + "'," + textBox27.Text + "," + textBox26.Text + "," + textBox25.Text + "," + textBox19.Text + "," + textBox18.Text + "," + textBox17.Text + "," + textBox16.Text + "," + textBox15.Text + ") ";
 
                 SqlCommand cmd = new SqlCommand(sql, m_con);
                 m_con.Open();
@@ -209,31 +209,255 @@ namespace Ayubo_Drive
 
 
                 }
-                    textBox11.Text = V_Id;
-                    textBox12.Text = V_Type_Id;
+                textBox11.Text = V_Id;
+                textBox12.Text = V_Type_Id;
 
 
 
-                    m_con.Close();
-                }
+                m_con.Close();
             }
+        }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+
+
+
+            try
+            {
+
+                string sql = "DELETE from Vehicle where V_Id='" + textBox11.Text + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+                MessageBox.Show("Successfully deleted vehicle");
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
+
+            textBox11.Clear();
+            textBox12.Clear();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                string sql = "DELETE from VehicleType where V_Type_Id='" + textBox14.Text + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+                MessageBox.Show("Successfully deleted vehicle");
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
+
+            textBox14.Clear();
+            textBox13.Clear();
+            textBox2.Clear();
+            textBox1.Clear();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string sql = "DELETE from Driver where D_Name='" + textBox23.Text + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+                MessageBox.Show("Successfully deleted vehicle");
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
+
+            textBox23.Clear();
+            textBox22.Clear();
+            textBox21.Clear();
+            textBox20.Clear();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
         {
             {
                 m_con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = m_con;
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "DELETE * from Vehicle where V_Id='" + textBox11.Text + "'";
+                cmd.CommandText = "select * from VehicleType where V_Type_Id='" + textBox14.Text + "'";
 
-                cmd.ExecuteReader();
-                textBox11.Clear();
-                textBox12.Clear();
-            }
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                string V_Type_Id = "";
+                string V_Type_Name = "";
+                string V_Rate = "";
+                string V_Weekly_Rate = "";
+
+                while (sdr.Read())
+                {
+
+
+                    V_Type_Id = sdr["V_Type_Id"].ToString();
+                    V_Type_Name = sdr["V_Type_Name"].ToString();
+                    V_Rate = sdr["V_Rate"].ToString();
+                    V_Weekly_Rate = sdr["V_Weekly_Rate"].ToString();
+
+
+                }
+                textBox14.Text = V_Type_Id;
+                textBox13.Text = V_Type_Name;
+                textBox2.Text = V_Rate;
+                textBox1.Text = V_Weekly_Rate;
+
+
                 m_con.Close();
             }
+
+          
+            }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            
+                m_con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = m_con;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from Driver where D_Name='" + textBox23.Text + "'";
+
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                string D_Name = "";
+                string D_Rate_Per_Hr = "";
+                string D_Password = "";
+                string D_Daily_Rate = "";
+
+                while (sdr.Read())
+                {
+
+
+                D_Name = sdr["D_Name"].ToString();
+                D_Rate_Per_Hr = sdr["D_Rate_Per_Hr"].ToString();
+                D_Password = sdr["D_Password"].ToString();
+                D_Daily_Rate = sdr["D_Daily_Rate"].ToString();
+
+
+                }
+                textBox23.Text = D_Name;
+                textBox22.Text = D_Rate_Per_Hr;
+                textBox21.Text = D_Daily_Rate;
+                textBox20.Text = D_Password;
+
+
+                m_con.Close();
+            }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string sql = "Update Vehicle set V_Type_Id='" + textBox12.Text + "' where V_Id='"+textBox11.Text+"'";
+                Console.WriteLine(sql);
+
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+                MessageBox.Show("Successfully updated vehicle");
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
+
+            textBox11.Clear();
+            textBox12.Clear();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string sql = "Update VehicleType set V_Type_Name='" + textBox13.Text + "',V_Rate='"+textBox2.Text+"',V_Weekly_Rate='"+textBox1.Text+"' where V_Type_Id='" + textBox14.Text + "'";
+                Console.WriteLine(sql);
+
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+                MessageBox.Show("Successfully updated vehicle");
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
+
+            textBox11.Clear();
+            textBox12.Clear();
         }
     }
-    
-    
+    }
+        
+
+
+
