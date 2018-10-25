@@ -52,7 +52,19 @@ namespace Ayubo_Drive
 
         private void button_sign_in_Click(object sender, EventArgs e)
         {
-           
+
+
+            string username = textBox1.Text;
+            string password = textBox2.Text;
+            if (username == "admin" && password == "123")
+            {
+
+                Admin admin = new Admin();
+                admin.Visible = true;
+                this.Hide();
+            }
+         
+
 
             try
             {

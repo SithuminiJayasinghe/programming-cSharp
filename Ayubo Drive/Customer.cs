@@ -130,6 +130,9 @@ namespace Ayubo_Drive
                 PrintConsole("on Changed combo1 driverName ", packageName);
                 PrintConsole("on Changed combo1 driverId ", packageId);
 
+
+              
+
                 string startKm = textBox4.Text;
                 PrintConsole("Start km ", startKm.ToString());
 
@@ -281,40 +284,41 @@ namespace Ayubo_Drive
 
                         }
 
+                        
+                    }
                         dreader_1.Close();
                         m_con.Close();
-
-                    }
-
+                 
                 }
+                return BaseCost;
 
-                if (radioButton1.Checked == true)
-                {
-                    double totalhire = BaseCost + waitingcharge + extrakmcharge;
-                    PrintConsole("Day total", totalhire.ToString());
-                    label27.Text = totalhire.ToString();
-                    label50.Text = "...".ToString();
-                    int totalhirecost = Convert.ToInt32(totalhire);
-                }
 
-                if (radioButton2.Checked == true)
-                {
-                    double totalhire= BaseCost + overnightstaycharge + extrakmcharge;
-                    PrintConsole("long tour", totalhire.ToString());
-                    label50.Text = totalhire.ToString();
-                    label27.Text = "...".ToString();
-                    int totalhirecost = Convert.ToInt32(totalhire);
-                }
-                     
 
-           return totalhirecost;
+                //if (radioButton1.Checked == true)
+                //{
+                //    double totalhire = BaseCost + waitingcharge + extrakmcharge;
+                //    PrintConsole("Day total", totalhire.ToString());
+                //    label27.Text = totalhire.ToString();
+                //    label50.Text = "...".ToString();
+                //    int totalhirecost = Convert.ToInt32(totalhire);
+                //}
+
+                //if (radioButton2.Checked == true)
+                //{
+                //    double totalhire = BaseCost + overnightstaycharge + extrakmcharge;
+                //    PrintConsole("long tour", totalhire.ToString());
+                //    label50.Text = totalhire.ToString();
+                //    label27.Text = "...".ToString();
+                //    int totalhirecost = Convert.ToInt32(totalhire);
+                //}
+
+
+                
             }
-
-                else
-                { 
-                    return 0;
+            else { return 0;}
+                    
                
-                }
+                
 
 
         }
@@ -415,16 +419,32 @@ namespace Ayubo_Drive
         {
             try
             {
-                Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
-                int total = doCalulation();
-                string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'"+customer.C_Name+"','Rent'," + total + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'"+d.D_NAME+"','"+days+"');";
+                if(radioButton_with_a_driver.Checked==true)
+                    {
+                    Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
+                    int total = doCalulation();
+                    string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Rent'," + total + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'" + d.D_NAME + "','" + days + "');";
 
-                Console.WriteLine(sql);
-                SqlCommand cmd = new SqlCommand(sql, m_con);
-                m_con.Open();
-                cmd.ExecuteReader();
+                    Console.WriteLine(sql);
+                    SqlCommand cmd = new SqlCommand(sql, m_con);
+                    m_con.Open();
+                    cmd.ExecuteReader();
 
-                MessageBox.Show("Successfully added new order");
+                    MessageBox.Show("Successfully added new order");
+                }
+                if(radioButton_without_a_driver.Checked==true)
+                {
+                    Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
+                    int total = doCalulation();
+                    string sql = "INSERT INTO job (J_Id,C_Id,C_Name,Hire_Or_Rent,Cost,V_Type,Duration) VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Rent'," + total + ",'" + v.V_Type_Name + "','" + days + "');";
+
+                    Console.WriteLine(sql);
+                    SqlCommand cmd = new SqlCommand(sql, m_con);
+                    m_con.Open();
+                    cmd.ExecuteReader();
+
+                    MessageBox.Show("Successfully added new order");
+                }
             }
 
             catch (Exception ex)
@@ -591,29 +611,29 @@ namespace Ayubo_Drive
 
         private void button4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
-                int total = doCalulation();
-                string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Rent'," + total + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'" + d.D_NAME + "','" + days + "');";
+            //try
+            //{
+            //    Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
+            //    int totalhire = doCalculation_Hire();
+            //    string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Hire'," + total + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'" + d.D_NAME + "','" + days + "');";
 
-                Console.WriteLine(sql);
-                SqlCommand cmd = new SqlCommand(sql, m_con);
-                m_con.Open();
-                cmd.ExecuteReader();
+            //    Console.WriteLine(sql);
+            //    SqlCommand cmd = new SqlCommand(sql, m_con);
+            //    m_con.Open();
+            //    cmd.ExecuteReader();
 
-                MessageBox.Show("Successfully added new order");
-            }
+            //    MessageBox.Show("Successfully added new order");
+            //}
 
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                MessageBox.Show("Something went wrong. PLease check your inputs");
-            }
-            finally
-            {
-                m_con.Close();
-            }
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex);
+            //    MessageBox.Show("Something went wrong. PLease check your inputs");
+            //}
+            //finally
+            //{
+            //    m_con.Close();
+            //}
         }
 
         private void label27_Click(object sender, EventArgs e)

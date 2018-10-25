@@ -57,6 +57,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
@@ -119,12 +125,6 @@
             this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rentTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.RentTableAdapter();
             this.packageTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.PackageTableAdapter();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -478,6 +478,65 @@
             this.tabPage2.Size = new System.Drawing.Size(679, 376);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hire";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(498, 297);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(16, 13);
+            this.label50.TabIndex = 40;
+            this.label50.Text = "...";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(367, 297);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(98, 13);
+            this.label42.TabIndex = 39;
+            this.label42.Text = "Total long tour cost";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(130, 297);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(16, 13);
+            this.label27.TabIndex = 38;
+            this.label27.Text = "...";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(14, 297);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(95, 13);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "Total day tour cost";
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.CustomFormat = "";
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker6.Location = new System.Drawing.Point(190, 164);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(119, 20);
+            this.dateTimePicker6.TabIndex = 36;
+            this.dateTimePicker6.Value = new System.DateTime(2018, 10, 25, 0, 0, 0, 0);
+            this.dateTimePicker6.ValueChanged += new System.EventHandler(this.dateTimePicker6_ValueChanged);
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.CustomFormat = "";
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker5.Location = new System.Drawing.Point(17, 163);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(120, 20);
+            this.dateTimePicker5.TabIndex = 35;
+            this.dateTimePicker5.Value = new System.DateTime(2018, 10, 25, 0, 0, 0, 0);
+            this.dateTimePicker5.ValueChanged += new System.EventHandler(this.dateTimePicker5_ValueChanged);
             // 
             // dateTimePicker3
             // 
@@ -1019,65 +1078,6 @@
             // packageTableAdapter
             // 
             this.packageTableAdapter.ClearBeforeFill = true;
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.CustomFormat = "";
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker5.Location = new System.Drawing.Point(17, 163);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(120, 20);
-            this.dateTimePicker5.TabIndex = 35;
-            this.dateTimePicker5.Value = new System.DateTime(2018, 10, 24, 23, 14, 48, 0);
-            this.dateTimePicker5.ValueChanged += new System.EventHandler(this.dateTimePicker5_ValueChanged);
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.CustomFormat = "";
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker6.Location = new System.Drawing.Point(190, 164);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(119, 20);
-            this.dateTimePicker6.TabIndex = 36;
-            this.dateTimePicker6.Value = new System.DateTime(2018, 10, 24, 23, 14, 36, 0);
-            this.dateTimePicker6.ValueChanged += new System.EventHandler(this.dateTimePicker6_ValueChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(14, 297);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(95, 13);
-            this.label17.TabIndex = 37;
-            this.label17.Text = "Total day tour cost";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(130, 297);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(16, 13);
-            this.label27.TabIndex = 38;
-            this.label27.Text = "...";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(367, 297);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(98, 13);
-            this.label42.TabIndex = 39;
-            this.label42.Text = "Total long tour cost";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(498, 297);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(16, 13);
-            this.label50.TabIndex = 40;
-            this.label50.Text = "...";
             // 
             // Form_customer
             // 
