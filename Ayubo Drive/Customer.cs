@@ -18,10 +18,10 @@ namespace Ayubo_Drive
         public static int WEEKLY_RENT = 10000;
         public static int V_Monthly_Rent = 40000;
         public int BaseCost=0;
-        public int waitingcharge = 0;
+        public double waitingcharge = 0;
         public int extrakmcharge = 0;
         public int overnightstaycharge = 0;
-        public int totalhirecost = 0;
+        public double totalhirecost = 0;
         public int MaxKm = 0;
         public Driver d;
         public Vehicle v;
@@ -116,7 +116,7 @@ namespace Ayubo_Drive
             }
         }
 
-        private int doCalculation_Hire()
+        private double doCalculation_Hire()
         {
             if (comboBox8.SelectedValue != null && comboBox9.SelectedValue != null)
             {
@@ -154,7 +154,7 @@ namespace Ayubo_Drive
 
                 if (Max_Km < distance)
                 {
-                    int extrakmcharge = (distance - Max_Km) * Extra_Km_Rate;
+                    extrakmcharge = (distance - Max_Km) * Extra_Km_Rate;
                     PrintConsole("extrakmcharge ", extrakmcharge.ToString());
                     if (radioButton1.Checked == true)
                     {
@@ -201,7 +201,7 @@ namespace Ayubo_Drive
 
                 if (tdf > Max_Hr)
                 {
-                    double waitingcharge = (tdf - Max_Hr) * Extra_Hr_Rate;
+                    waitingcharge = (tdf - Max_Hr) * Extra_Hr_Rate;
                     PrintConsole("waitingcharge ", waitingcharge.ToString());
 
 
@@ -236,7 +236,7 @@ namespace Ayubo_Drive
                 int driver_overnight_rate = Convert.ToInt32(p.Driver_Overnight_Rate_Per_Night);
                 if (days>=2)
                 {
-                    int overnightstaycharge = (days * vehicle_night_park_rate) + (days * driver_overnight_rate);
+                    overnightstaycharge = (days * vehicle_night_park_rate) + (days * driver_overnight_rate);
                     PrintConsole("overnightstaycharge ", overnightstaycharge.ToString());
 
                     if(radioButton2.Checked==true)
@@ -290,32 +290,33 @@ namespace Ayubo_Drive
                         m_con.Close();
                  
                 }
-                return BaseCost;
+             
 
 
 
-                //if (radioButton1.Checked == true)
-                //{
-                //    double totalhire = BaseCost + waitingcharge + extrakmcharge;
-                //    PrintConsole("Day total", totalhire.ToString());
-                //    label27.Text = totalhire.ToString();
-                //    label50.Text = "...".ToString();
-                //    int totalhirecost = Convert.ToInt32(totalhire);
-                //}
+                if (radioButton1.Checked == true)
+                {
+                    totalhirecost = BaseCost + waitingcharge + extrakmcharge;
+                    PrintConsole("Day total", totalhirecost.ToString());
+                    label27.Text = totalhirecost.ToString();
+                    label50.Text = "...".ToString();
+                    //int totalhirecost = Convert.ToInt32(totalhire);
+                }
 
-                //if (radioButton2.Checked == true)
-                //{
-                //    double totalhire = BaseCost + overnightstaycharge + extrakmcharge;
-                //    PrintConsole("long tour", totalhire.ToString());
-                //    label50.Text = totalhire.ToString();
-                //    label27.Text = "...".ToString();
-                //    int totalhirecost = Convert.ToInt32(totalhire);
-                //}
+                if (radioButton2.Checked == true)
+                {
+                    totalhirecost = BaseCost + overnightstaycharge + extrakmcharge;
+                    PrintConsole("long tour", totalhirecost.ToString());
+                    label50.Text = totalhirecost.ToString();
+                    label27.Text = "...".ToString();
+                    //it totalhirecost = Convert.ToInt32(totalhire);
+                }
 
+                 return totalhirecost;
 
-                
             }
-            else { return 0;}
+            else
+            { return 0;}
                     
                
                 
@@ -419,26 +420,40 @@ namespace Ayubo_Drive
         {
             try
             {
-                if(radioButton_with_a_driver.Checked==true)
-                    {
+                if (radioButton_with_a_driver.Checked == true)
+                {
                     Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
                     int total = doCalulation();
                     string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Rent'," + total + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'" + d.D_NAME + "','" + days + "');";
+                    PrintConsole("withdriver customer Id", customer.C_Id.ToString());
+                    PrintConsole("withdriver customer", customer.C_Name.ToString());
+                    PrintConsole("withdriver total", total.ToString());
+                    PrintConsole("withdriver driver", d.D_ID.ToString());
+                    PrintConsole("withdriver driver", d.D_NAME.ToString());
+                    PrintConsole("withdriver days", days.ToString());
 
-                    Console.WriteLine(sql);
+
+
+                    
                     SqlCommand cmd = new SqlCommand(sql, m_con);
                     m_con.Open();
                     cmd.ExecuteReader();
 
                     MessageBox.Show("Successfully added new order");
                 }
-                if(radioButton_without_a_driver.Checked==true)
+                if (radioButton_without_a_driver.Checked == true)
                 {
                     Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
                     int total = doCalulation();
                     string sql = "INSERT INTO job (J_Id,C_Id,C_Name,Hire_Or_Rent,Cost,V_Type,Duration) VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Rent'," + total + ",'" + v.V_Type_Name + "','" + days + "');";
+                    PrintConsole("withoutdriver customer Id", customer.C_Id.ToString());
+                    PrintConsole("withoutdriver customer", customer.C_Name.ToString());
+                    PrintConsole("withoutdriver total", total.ToString());
+                    PrintConsole("withoutdriver driver", v.V_Type_Name.ToString());
+                    PrintConsole("withoutdriver days", days.ToString());
 
-                    Console.WriteLine(sql);
+
+
                     SqlCommand cmd = new SqlCommand(sql, m_con);
                     m_con.Open();
                     cmd.ExecuteReader();
@@ -611,29 +626,29 @@ namespace Ayubo_Drive
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
-            //    int totalhire = doCalculation_Hire();
-            //    string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Hire'," + total + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'" + d.D_NAME + "','" + days + "');";
+            try
+            {
+                Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
+                double totalhire = doCalculation_Hire();
+                string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Hire'," + totalhirecost + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'" + d.D_NAME + "','" + days + "');";
 
-            //    Console.WriteLine(sql);
-            //    SqlCommand cmd = new SqlCommand(sql, m_con);
-            //    m_con.Open();
-            //    cmd.ExecuteReader();
+                Console.WriteLine(sql);
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
 
-            //    MessageBox.Show("Successfully added new order");
-            //}
+                MessageBox.Show("Successfully added new order");
+            }
 
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex);
-            //    MessageBox.Show("Something went wrong. PLease check your inputs");
-            //}
-            //finally
-            //{
-            //    m_con.Close();
-            //}
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
         }
 
         private void label27_Click(object sender, EventArgs e)
