@@ -155,7 +155,7 @@ namespace Ayubo_Drive
 
             try
             {
-                string sql = "INSERT INTO Package VALUES (" + textBox29.Text + ".'" + textBox28.Text + "'," + textBox27.Text + "," + textBox26.Text + "," + textBox25.Text + "," + textBox19.Text + "," + textBox18.Text + "," + textBox17.Text + "," + textBox16.Text + "," + textBox15.Text + ") ";
+                string sql = "INSERT INTO Package VALUES ('" + textBox29.Text + "','" + textBox28.Text + "','" + textBox27.Text + "','" + textBox26.Text + "','" + textBox25.Text + "','" + textBox19.Text + "','" + textBox18.Text + "','" + textBox17.Text + "','" + textBox16.Text + "','" + textBox15.Text + "') ";
 
                 SqlCommand cmd = new SqlCommand(sql, m_con);
                 m_con.Open();
@@ -452,8 +452,162 @@ namespace Ayubo_Drive
                 m_con.Close();
             }
 
-            textBox11.Clear();
-            textBox12.Clear();
+            textBox14.Clear();
+            textBox13.Clear();
+            textBox2.Clear();
+            textBox1.Clear();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                string sql = "Update Driver set D_Rate_Per_Hr='" + textBox22.Text + "',D_Password='" + textBox20.Text + "',D_Daily_Rate='" + textBox21.Text + "' where D_Name='" + textBox23.Text + "'";
+                Console.WriteLine(sql);
+
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+                MessageBox.Show("Successfully updated vehicle");
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
+
+            textBox14.Clear();
+            textBox13.Clear();
+            textBox2.Clear();
+            textBox1.Clear();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+            m_con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = m_con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Package where P_Id='" + textBox29.Text + "'";
+
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+
+            string P_Id = "";
+            string P_Name = "";
+            string Max_Km = "";
+            string Max_Hr = "";
+            string Extra_Km_Rate = "";
+            string Extra_Hr_Rate = "";
+            string Cost = "";
+            string Vehicle_Night_Park_Rate_Per_Night = "";
+            string Driver_Overnight_Rate_Per_Night = "";
+            string V_Type_Id = "";
+
+
+            while (sdr.Read())
+            {
+
+
+                P_Id = sdr["P_Id"].ToString();
+                P_Name = sdr["P_Name"].ToString();
+                Max_Km = sdr["Max_Km"].ToString();
+                Max_Hr = sdr["Max_Hr"].ToString();
+                Extra_Km_Rate = sdr["Extra_Km_Rate"].ToString();
+                Extra_Hr_Rate = sdr["Extra_Hr_Rate"].ToString();
+                Cost = sdr["Cost"].ToString();
+                Vehicle_Night_Park_Rate_Per_Night = sdr["Vehicle_Night_Park_Rate_Per_Night"].ToString();
+                Driver_Overnight_Rate_Per_Night = sdr["Driver_Overnight_Rate_Per_Night"].ToString();
+                V_Type_Id = sdr["V_Type_Id"].ToString();
+
+            }
+            textBox29.Text = P_Id;
+            textBox28.Text = P_Name;
+            textBox27.Text = Max_Km;
+            textBox26.Text = Max_Hr;
+            textBox25.Text = Extra_Km_Rate;
+            textBox19.Text = Extra_Hr_Rate;
+            textBox18.Text = Cost;
+            textBox17.Text = Vehicle_Night_Park_Rate_Per_Night;
+            textBox16.Text = Driver_Overnight_Rate_Per_Night;
+            textBox15.Text = V_Type_Id;
+
+            m_con.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string sql = "Update Package set P_Name='" + textBox28.Text + "',Max_Km='" + textBox27.Text + "',Max_Hr='" + textBox26.Text + "',Extra_Km_Rate='" + textBox25.Text + "', Extra_Hr_Rate='" + textBox19.Text + "', Cost='" + textBox18.Text + "', Vehicle_Night_Park_Rate_Per_Night='" + textBox17.Text + "', Driver_Overnight_Rate_Per_Night='" + textBox16.Text + "', V_Type_Id='" + textBox15.Text + "' where P_Id='" + textBox29.Text + "'";
+                Console.WriteLine(sql);
+
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+                MessageBox.Show("Successfully updated vehicle");
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
+
+            textBox14.Clear();
+            textBox13.Clear();
+            textBox2.Clear();
+            textBox1.Clear();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string sql = "DELETE from Package where P_Id='" + textBox29.Text + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                cmd.ExecuteReader();
+                MessageBox.Show("Successfully deleted vehicle");
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Something went wrong. PLease check your inputs");
+            }
+            finally
+            {
+                m_con.Close();
+            }
+
+            textBox23.Clear();
+            textBox22.Clear();
+            textBox21.Clear();
+            textBox20.Clear();
         }
     }
     }

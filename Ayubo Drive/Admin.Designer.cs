@@ -35,6 +35,8 @@
             this.jobTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.JobTableAdapter();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -49,6 +51,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button14 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -91,6 +94,7 @@
             this.tab1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button17 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -114,10 +118,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
@@ -187,6 +187,25 @@
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(115, 270);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 19;
+            this.button15.Text = "Fill";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(137, 43);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Auto generated";
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(277, 270);
@@ -205,6 +224,7 @@
             this.button5.TabIndex = 16;
             this.button5.Text = "Update";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -321,6 +341,16 @@
             this.groupBox2.Size = new System.Drawing.Size(385, 325);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(115, 270);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 18;
+            this.button14.Text = "Fill";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // label10
             // 
@@ -545,7 +575,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 362);
+            this.tabPage2.Size = new System.Drawing.Size(497, 344);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Rent history";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -628,7 +658,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 362);
+            this.tabPage1.Size = new System.Drawing.Size(497, 344);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Profile";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -735,6 +765,16 @@
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(114, 310);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 23);
+            this.button17.TabIndex = 26;
+            this.button17.Text = "Fill";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(276, 310);
@@ -743,6 +783,7 @@
             this.button10.TabIndex = 25;
             this.button10.Text = "Delete";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -752,6 +793,7 @@
             this.button11.TabIndex = 24;
             this.button11.Text = "Update";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -923,44 +965,6 @@
             this.label33.Size = new System.Drawing.Size(80, 13);
             this.label33.TabIndex = 3;
             this.label33.Text = "Maximum hours";
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(115, 270);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 18;
-            this.button14.Text = "Fill";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(115, 270);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 19;
-            this.button15.Text = "Fill";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(114, 310);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 23);
-            this.button17.TabIndex = 26;
-            this.button17.Text = "Fill";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(137, 43);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Auto generated";
             // 
             // Admin
             // 
