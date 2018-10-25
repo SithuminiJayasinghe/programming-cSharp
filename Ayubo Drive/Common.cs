@@ -57,6 +57,20 @@ namespace Ayubo_Drive
     
     }
 
+    public class Job
+    {
+        public string J_Id;
+        public string C_Id;
+        public string C_Name;
+        public string Hire_Or_Rent;
+        public string Cost;
+        public string V_Type;
+        public string D_Id;
+        public string D_Name;
+        public string Duration;
+
+    }
+
 
 
     class Common
@@ -90,6 +104,53 @@ namespace Ayubo_Drive
                     return d;
 
                 } else
+                {
+                    return null;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                m_con.Close();
+            }
+        }
+
+        public Job GetLastJob()
+        {
+            try
+            {
+
+                string sql = "SELECT TOP 1 * FROM Job ORDER BY J_Id DESC";
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                SqlDataReader dreader = cmd.ExecuteReader();
+
+                // We are going to store driver data in this variable (Driver)
+                Job j = new Job();
+
+                if (dreader.Read())
+                {
+
+
+                    j.J_Id = dreader[0].ToString();
+                    j.C_Id = dreader[1].ToString();
+                    j.C_Name = dreader[2].ToString();
+                    j.Hire_Or_Rent = dreader[3].ToString();
+                    j.Cost = dreader[4].ToString();
+                    j.V_Type = dreader[5].ToString();
+                    j.D_Id = dreader[6].ToString();
+                    j.D_Name = dreader[7].ToString();
+                    j.Duration = dreader[8].ToString();
+       
+                    dreader.Close();
+                    return j;
+
+                }
+                else
                 {
                     return null;
                 }
@@ -269,6 +330,52 @@ namespace Ayubo_Drive
 
                     dreader.Close();
                     return h;
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                m_con.Close();
+            }
+        }
+
+        public Job GetJobById(String J_Id)
+        {
+
+            try
+            {
+
+                string sql = "select * from Job where J_Id ='" + J_Id + "' ";
+                SqlCommand cmd = new SqlCommand(sql, m_con);
+                m_con.Open();
+                SqlDataReader dreader = cmd.ExecuteReader();
+
+                // We are going to store vehicle data in this variable (Driver)
+                Job j = new Job();
+
+                if (dreader.Read())
+                {
+                    j.J_Id = dreader[0].ToString();
+                    j.C_Id = dreader[1].ToString();
+                    j.C_Name = dreader[2].ToString();
+                    j.Hire_Or_Rent = dreader[3].ToString();
+                    j.Cost = dreader[4].ToString();
+                    j.V_Type = dreader[5].ToString();
+                    j.D_Id = dreader[6].ToString();
+                    j.D_Name = dreader[7].ToString();
+                    j.Duration = dreader[8].ToString();
+                    
+                    dreader.Close();
+                    return j;
 
                 }
                 else

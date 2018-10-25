@@ -13,6 +13,7 @@ namespace Ayubo_Drive
 {
     public partial class Form_customer : Form
     {
+        public static string lastJobId = null;
        
         SqlConnection m_con = new DatabaseConnection().getConnection();
         public static int WEEKLY_RENT = 10000;
@@ -27,6 +28,7 @@ namespace Ayubo_Drive
         public Vehicle v;
         public Package p;
         public Hire h;
+        public Job j;
         public int days = 0;
         Common c = new Common();
         public Form_customer()
@@ -332,6 +334,8 @@ namespace Ayubo_Drive
 
         private void Customer_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'ayubo_driveDataSet1.Job' table. You can move, or remove it, as needed.
+            this.jobTableAdapter.Fill(this.ayubo_driveDataSet1.Job);
             // TODO: This line of code loads data into the 'ayubo_driveDataSet.Job' table. You can move, or remove it, as needed.
             this.jobTableAdapter.Fill(this.ayubo_driveDataSet.Job);
             // TODO: This line of code loads data into the 'ayubo_driveDataSet.Package' table. You can move, or remove it, as needed.
@@ -474,6 +478,11 @@ namespace Ayubo_Drive
             finally
             {
                 m_con.Close();
+                m_con.Close();
+                Order_Details od = new Order_Details();
+                od.Show();
+                this.Hide();
+
             }
 
 
@@ -671,8 +680,14 @@ namespace Ayubo_Drive
                 SqlCommand cmd = new SqlCommand(sql, m_con);
                 m_con.Open();
                 cmd.ExecuteReader();
-
+                Job lastJob = c.GetLastJob();
+                Console.WriteLine("----------------------------------id" + lastJob.J_Id);
                 MessageBox.Show("Successfully added new order");
+                lastJobId = lastJob.J_Id;
+                Order_Details od = new Order_Details();
+                od.Show();
+                this.Hide();
+
             }
 
             catch (Exception ex)
@@ -682,10 +697,14 @@ namespace Ayubo_Drive
             }
             finally
             {
+               
                 m_con.Close();
+         
+                
             }
-        }
 
+        }
+        
         private void label27_Click(object sender, EventArgs e)
         {
             
@@ -698,6 +717,10 @@ namespace Ayubo_Drive
 
         private void comboBox2_SelectedIndexChanged_2(object sender, EventArgs e)
         {
+            string J_Id = comboBox2.SelectedValue.ToString();
+
+            j = c.GetJobById(J_Id);
+
 
         }
 
@@ -745,6 +768,45 @@ namespace Ayubo_Drive
             try
             {
                 this.jobTableAdapter.FillBy5(this.ayubo_driveDataSet.Job);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy5ToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.FillBy5(this.ayubo_driveDataSet.Job);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void newToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.New(this.ayubo_driveDataSet.Job);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void reddaToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.redda(this.ayubo_driveDataSet1.Job);
             }
             catch (System.Exception ex)
             {

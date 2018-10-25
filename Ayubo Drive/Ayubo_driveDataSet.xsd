@@ -637,6 +637,35 @@ ORDER BY J_Id DESC</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="Ayubo_driveConnectionString (Settings)" DbObjectName="Ayubo_drive.dbo.Job" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy5" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy5" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="FillBy5">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        Job.*
+FROM            Job ORDER BY J_Id DESC;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Ayubo_driveConnectionString (Settings)" DbObjectName="Ayubo_drive.dbo.Job" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="New" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="New" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="New">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        J_Id, C_Id, Duration, D_Name, D_Id, V_Type, Cost, Hire_Or_Rent, C_Name
+FROM            Job
+ORDER BY J_Id DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Ayubo_driveConnectionString (Settings)" DbObjectName="Ayubo_drive.dbo.Job" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="redda" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="redda" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="redda">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        J_Id, C_Id, C_Name, Hire_Or_Rent, Cost, V_Type, D_Id, D_Name, Duration
+FROM            Job
+ORDER BY J_Id DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
         </Tables>

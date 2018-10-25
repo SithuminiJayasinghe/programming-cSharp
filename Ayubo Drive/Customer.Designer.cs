@@ -57,6 +57,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.driverBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -97,7 +100,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.jobBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.jobBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.ayubo_driveDataSet1 = new Ayubo_Drive.Ayubo_driveDataSet();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -116,6 +120,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.jobBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.vehicleTypeTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.VehicleTypeTableAdapter();
             this.vehicleTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -130,11 +135,6 @@
             this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jobTableAdapter = new Ayubo_Drive.Ayubo_driveDataSetTableAdapters.JobTableAdapter();
             this.ayubodriveDataSetBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.fillBy4ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillBy4ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.label51 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.driverBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -144,9 +144,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource2)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource1)).BeginInit();
@@ -155,8 +158,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource3)).BeginInit();
-            this.fillBy4ToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -164,7 +165,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(24, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(687, 402);
@@ -495,6 +496,31 @@
             this.tabPage2.Size = new System.Drawing.Size(679, 376);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hire";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.driverBindingSource1;
+            this.comboBox3.DisplayMember = "D_Name";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(15, 80);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 42;
+            this.comboBox3.ValueMember = "D_Id";
+            // 
+            // driverBindingSource1
+            // 
+            this.driverBindingSource1.DataMember = "Driver";
+            this.driverBindingSource1.DataSource = this.ayubo_driveDataSet;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(12, 64);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(35, 13);
+            this.label51.TabIndex = 41;
+            this.label51.Text = "Driver";
             // 
             // label50
             // 
@@ -891,7 +917,7 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.jobBindingSource1;
+            this.comboBox2.DataSource = this.jobBindingSource2;
             this.comboBox2.DisplayMember = "J_Id";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(154, 26);
@@ -901,10 +927,15 @@
             this.comboBox2.ValueMember = "J_Id";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_2);
             // 
-            // jobBindingSource1
+            // jobBindingSource2
             // 
-            this.jobBindingSource1.DataMember = "Job";
-            this.jobBindingSource1.DataSource = this.ayubo_driveDataSet;
+            this.jobBindingSource2.DataMember = "Job";
+            this.jobBindingSource2.DataSource = this.ayubo_driveDataSet1;
+            // 
+            // ayubo_driveDataSet1
+            // 
+            this.ayubo_driveDataSet1.DataSetName = "Ayubo_driveDataSet";
+            this.ayubo_driveDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label34
             // 
@@ -1068,6 +1099,11 @@
             this.label18.TabIndex = 3;
             this.label18.Text = "Vehicle type";
             // 
+            // jobBindingSource1
+            // 
+            this.jobBindingSource1.DataMember = "Job";
+            this.jobBindingSource1.DataSource = this.ayubo_driveDataSet;
+            // 
             // vehicleTypeTableAdapter
             // 
             this.vehicleTypeTableAdapter.ClearBeforeFill = true;
@@ -1127,56 +1163,11 @@
             this.ayubodriveDataSetBindingSource3.DataSource = this.ayubo_driveDataSet;
             this.ayubodriveDataSetBindingSource3.Position = 0;
             // 
-            // fillBy4ToolStrip
-            // 
-            this.fillBy4ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillBy4ToolStripButton});
-            this.fillBy4ToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillBy4ToolStrip.Name = "fillBy4ToolStrip";
-            this.fillBy4ToolStrip.Size = new System.Drawing.Size(735, 25);
-            this.fillBy4ToolStrip.TabIndex = 2;
-            this.fillBy4ToolStrip.Text = "fillBy4ToolStrip";
-            this.fillBy4ToolStrip.Visible = false;
-            // 
-            // fillBy4ToolStripButton
-            // 
-            this.fillBy4ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy4ToolStripButton.Name = "fillBy4ToolStripButton";
-            this.fillBy4ToolStripButton.Size = new System.Drawing.Size(45, 22);
-            this.fillBy4ToolStripButton.Text = "FillBy4";
-            this.fillBy4ToolStripButton.Click += new System.EventHandler(this.fillBy4ToolStripButton_Click);
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(12, 64);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(35, 13);
-            this.label51.TabIndex = 41;
-            this.label51.Text = "Driver";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DataSource = this.driverBindingSource1;
-            this.comboBox3.DisplayMember = "D_Name";
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(15, 80);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 42;
-            this.comboBox3.ValueMember = "D_Id";
-            // 
-            // driverBindingSource1
-            // 
-            this.driverBindingSource1.DataMember = "Driver";
-            this.driverBindingSource1.DataSource = this.ayubo_driveDataSet;
-            // 
             // Form_customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 426);
-            this.Controls.Add(this.fillBy4ToolStrip);
+            this.ClientSize = new System.Drawing.Size(750, 449);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form_customer";
             this.Text = "Request a service";
@@ -1193,10 +1184,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayubo_driveDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource1)).EndInit();
@@ -1205,11 +1199,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource3)).EndInit();
-            this.fillBy4ToolStrip.ResumeLayout(false);
-            this.fillBy4ToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1316,10 +1306,10 @@
         private Ayubo_driveDataSetTableAdapters.JobTableAdapter jobTableAdapter;
         private System.Windows.Forms.BindingSource jobBindingSource1;
         private System.Windows.Forms.BindingSource ayubodriveDataSetBindingSource3;
-        private System.Windows.Forms.ToolStrip fillBy4ToolStrip;
-        private System.Windows.Forms.ToolStripButton fillBy4ToolStripButton;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.BindingSource driverBindingSource1;
         private System.Windows.Forms.Label label51;
+        private Ayubo_driveDataSet ayubo_driveDataSet1;
+        private System.Windows.Forms.BindingSource jobBindingSource2;
     }
 }

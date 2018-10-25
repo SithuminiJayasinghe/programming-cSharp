@@ -7944,7 +7944,7 @@ SELECT J_Id, C_Id, C_Name, Hire_Or_Rent, Cost, V_Type, D_Name, Duration FROM Job
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Job.*\r\nFROM            Job";
@@ -7977,9 +7977,18 @@ SELECT J_Id, C_Id, C_Name, Hire_Or_Rent, Cost, V_Type, D_Name, Duration FROM Job
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        J_Id, C_Id, C_Name, Hire_Or_Rent, Cost, V_Type, D_Id, D_Name, Durat" +
-                "ion\r\nFROM            Job\r\nORDER BY J_Id DESC";
+            this._commandCollection[6].CommandText = "SELECT        Job.*\r\nFROM            Job ORDER BY J_Id DESC;";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT        J_Id, C_Id, Duration, D_Name, D_Id, V_Type, Cost, Hire_Or_Rent, C_N" +
+                "ame\r\nFROM            Job\r\nORDER BY J_Id DESC";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "SELECT        J_Id, C_Id, C_Name, Hire_Or_Rent, Cost, V_Type, D_Id, D_Name, Durat" +
+                "ion\r\nFROM            Job\r\nORDER BY J_Id DESC";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8089,6 +8098,32 @@ SELECT J_Id, C_Id, C_Name, Hire_Or_Rent, Cost, V_Type, D_Name, Duration FROM Job
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy5(Ayubo_driveDataSet.JobDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int New(Ayubo_driveDataSet.JobDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int redda(Ayubo_driveDataSet.JobDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
