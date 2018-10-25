@@ -332,6 +332,8 @@ namespace Ayubo_Drive
 
         private void Customer_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'ayubo_driveDataSet.Job' table. You can move, or remove it, as needed.
+            this.jobTableAdapter.Fill(this.ayubo_driveDataSet.Job);
             // TODO: This line of code loads data into the 'ayubo_driveDataSet.Package' table. You can move, or remove it, as needed.
             this.packageTableAdapter.Fill(this.ayubo_driveDataSet.Package);
             // TODO: This line of code loads data into the 'ayubo_driveDataSet.Rent' table. You can move, or remove it, as needed.
@@ -440,18 +442,20 @@ namespace Ayubo_Drive
                     cmd.ExecuteReader();
 
                     MessageBox.Show("Successfully added new order");
+
+
+
                 }
                 if (radioButton_without_a_driver.Checked == true)
                 {
                     Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
                     int total = doCalulation();
-                    string sql = "INSERT INTO job (J_Id,C_Id,C_Name,Hire_Or_Rent,Cost,V_Type,Duration) VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Rent'," + total + ",'" + v.V_Type_Name + "','" + days + "');";
+                    string sql = "INSERT INTO job (C_Id,C_Name,Hire_Or_Rent,Cost,V_Type,Duration) VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Rent'," + total + ",'" + v.V_Type_Name + "','" + days + "');";
                     PrintConsole("withoutdriver customer Id", customer.C_Id.ToString());
                     PrintConsole("withoutdriver customer", customer.C_Name.ToString());
                     PrintConsole("withoutdriver total", total.ToString());
                     PrintConsole("withoutdriver driver", v.V_Type_Name.ToString());
                     PrintConsole("withoutdriver days", days.ToString());
-
 
 
                     SqlCommand cmd = new SqlCommand(sql, m_con);
@@ -658,6 +662,63 @@ namespace Ayubo_Drive
 
         private void label44_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.FillBy2(this.ayubo_driveDataSet.Job);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy3ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.FillBy3(this.ayubo_driveDataSet.Job);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy4ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.FillBy4(this.ayubo_driveDataSet.Job);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy5ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.jobTableAdapter.FillBy5(this.ayubo_driveDataSet.Job);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

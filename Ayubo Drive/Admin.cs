@@ -57,12 +57,13 @@ namespace Ayubo_Drive
             {
                 m_con.Close();
             }
-        
-    }
+
+        }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
         {
             Console.WriteLine("vId", textBox11.Text.ToString());
+            textBox12.Clear();
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
@@ -154,7 +155,7 @@ namespace Ayubo_Drive
 
             try
             {
-                string sql = "INSERT Packages VALUES ("+textBox29.Text+".'" + textBox28.Text + "'," + textBox27.Text + "," + textBox26.Text + "," + textBox25.Text + "," + textBox19.Text + "," + textBox18.Text + "," + textBox17.Text + "," + textBox16.Text + "," + textBox15.Text + ") ";
+                string sql = "INSERT Packages VALUES (" + textBox29.Text + ".'" + textBox28.Text + "'," + textBox27.Text + "," + textBox26.Text + "," + textBox25.Text + "," + textBox19.Text + "," + textBox18.Text + "," + textBox17.Text + "," + textBox16.Text + "," + textBox15.Text + ") ";
 
                 SqlCommand cmd = new SqlCommand(sql, m_con);
                 m_con.Open();
@@ -179,9 +180,60 @@ namespace Ayubo_Drive
 
         private void textBox15_TextChanged(object sender, EventArgs e)
         {
-           
+
 
 
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            {
+                m_con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = m_con;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from Vehicle where V_Id='" + textBox11.Text + "'";
+
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                string V_Id = "";
+                string V_Type_Id = "";
+
+                while (sdr.Read())
+                {
+
+
+                    V_Id = sdr["V_Id"].ToString();
+                    V_Type_Id = sdr["V_Type_Id"].ToString();
+
+
+                }
+                    textBox11.Text = V_Id;
+                    textBox12.Text = V_Type_Id;
+
+
+
+                    m_con.Close();
+                }
+            }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            {
+                m_con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = m_con;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "DELETE * from Vehicle where V_Id='" + textBox11.Text + "'";
+
+                cmd.ExecuteReader();
+                textBox11.Clear();
+                textBox12.Clear();
+            }
+                m_con.Close();
+            }
+        }
     }
-}
+    
+    
