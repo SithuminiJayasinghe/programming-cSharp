@@ -132,6 +132,9 @@
             this.ayubodriveDataSetBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.fillBy4ToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillBy4ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.label51 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.driverBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -153,6 +156,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource3)).BeginInit();
             this.fillBy4ToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -194,7 +198,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(0, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(677, 305);
+            this.groupBox2.Size = new System.Drawing.Size(677, 374);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rent a vehicle";
@@ -447,6 +451,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Thistle;
+            this.tabPage2.Controls.Add(this.comboBox3);
+            this.tabPage2.Controls.Add(this.label51);
             this.tabPage2.Controls.Add(this.label50);
             this.tabPage2.Controls.Add(this.label42);
             this.tabPage2.Controls.Add(this.label27);
@@ -708,7 +714,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(536, 49);
+            this.textBox5.Location = new System.Drawing.Point(535, 32);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 15;
@@ -718,7 +724,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(533, 32);
+            this.label35.Location = new System.Drawing.Point(532, 15);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(43, 13);
             this.label35.TabIndex = 14;
@@ -756,7 +762,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(363, 49);
+            this.textBox4.Location = new System.Drawing.Point(362, 32);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 10;
@@ -768,7 +774,7 @@
             this.comboBox9.DataSource = this.packageBindingSource;
             this.comboBox9.DisplayMember = "P_Name";
             this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(188, 48);
+            this.comboBox9.Location = new System.Drawing.Point(187, 31);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(121, 21);
             this.comboBox9.TabIndex = 7;
@@ -785,7 +791,7 @@
             this.comboBox8.DataSource = this.vehicleTypeBindingSource2;
             this.comboBox8.DisplayMember = "V_Type_Name";
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(16, 48);
+            this.comboBox8.Location = new System.Drawing.Point(15, 31);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(121, 21);
             this.comboBox8.TabIndex = 6;
@@ -809,7 +815,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(360, 32);
+            this.label12.Location = new System.Drawing.Point(359, 15);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 13);
             this.label12.TabIndex = 4;
@@ -828,7 +834,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(185, 32);
+            this.label10.Location = new System.Drawing.Point(184, 15);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 13);
             this.label10.TabIndex = 2;
@@ -847,7 +853,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 32);
+            this.label8.Location = new System.Drawing.Point(13, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 0;
@@ -1140,6 +1146,31 @@
             this.fillBy4ToolStripButton.Text = "FillBy4";
             this.fillBy4ToolStripButton.Click += new System.EventHandler(this.fillBy4ToolStripButton_Click);
             // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(12, 64);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(35, 13);
+            this.label51.TabIndex = 41;
+            this.label51.Text = "Driver";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.driverBindingSource1;
+            this.comboBox3.DisplayMember = "D_Name";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(15, 80);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 42;
+            this.comboBox3.ValueMember = "D_Id";
+            // 
+            // driverBindingSource1
+            // 
+            this.driverBindingSource1.DataMember = "Driver";
+            this.driverBindingSource1.DataSource = this.ayubo_driveDataSet;
+            // 
             // Form_customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1176,6 +1207,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource3)).EndInit();
             this.fillBy4ToolStrip.ResumeLayout(false);
             this.fillBy4ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1286,5 +1318,8 @@
         private System.Windows.Forms.BindingSource ayubodriveDataSetBindingSource3;
         private System.Windows.Forms.ToolStrip fillBy4ToolStrip;
         private System.Windows.Forms.ToolStripButton fillBy4ToolStripButton;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.BindingSource driverBindingSource1;
+        private System.Windows.Forms.Label label51;
     }
 }

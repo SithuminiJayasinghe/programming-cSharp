@@ -631,9 +631,40 @@ namespace Ayubo_Drive
         private void button4_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   
+                string vTypeID = comboBox8.SelectedValue.ToString();
+                PrintConsole("on Changed combo1 vTypeID ", vTypeID);
+
+        
+                String driverId = comboBox3.SelectedValue.ToString();
+                PrintConsole("on Changed combo1 driverId ", driverId);
+
+                d = c.GetDriverRowById(driverId);
+                v = c.GetVehicleTypeById(vTypeID);
+
                 Customer customer = c.GetCustomerById(Form_sign_in.USER_ID);
                 double totalhire = doCalculation_Hire();
+                Console.WriteLine("before query");
+                if(customer == null)
+                {
+                    Console.WriteLine("customer not found");
+                    MessageBox.Show("customer not found");
+
+                    return;
+                }
+                if (v == null)
+                {
+                    Console.WriteLine("vehicle not found");
+                    MessageBox.Show("vehicle not found");
+                    return;
+                }
+
+                if (d == null)
+                {
+                    Console.WriteLine("driver not found");
+                    MessageBox.Show("driver not found");
+                    return;
+                }
                 string sql = "INSERT INTO job VALUES(" + customer.C_Id + ",'" + customer.C_Name + "','Hire'," + totalhirecost + ",'" + v.V_Type_Name + "'," + d.D_ID + ",'" + d.D_NAME + "','" + days + "');";
 
                 Console.WriteLine(sql);
