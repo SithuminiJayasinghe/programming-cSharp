@@ -34,18 +34,20 @@
             this.button_sign_in = new System.Windows.Forms.Button();
             this.button_sign_up = new System.Windows.Forms.Button();
             this.label_new_user = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_welcome
             // 
             this.label_welcome.AutoSize = true;
-            this.label_welcome.Location = new System.Drawing.Point(347, 20);
+            this.label_welcome.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_welcome.Location = new System.Drawing.Point(184, 9);
             this.label_welcome.Name = "label_welcome";
-            this.label_welcome.Size = new System.Drawing.Size(128, 13);
+            this.label_welcome.Size = new System.Drawing.Size(344, 33);
             this.label_welcome.TabIndex = 0;
             this.label_welcome.Text = "Welcome to Ayubo Drive!";
             this.label_welcome.Click += new System.EventHandler(this.label1_Click);
@@ -99,14 +101,6 @@
             this.label_new_user.TabIndex = 5;
             this.label_new_user.Text = "New user?";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(94, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(94, 73);
@@ -118,14 +112,19 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label_username);
             this.groupBox1.Controls.Add(this.button_sign_up);
             this.groupBox1.Controls.Add(this.label_new_user);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button_sign_in);
             this.groupBox1.Controls.Add(this.label_password);
-            this.groupBox1.Location = new System.Drawing.Point(39, 68);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox1.Location = new System.Drawing.Point(21, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(224, 302);
             this.groupBox1.TabIndex = 8;
@@ -133,13 +132,23 @@
             this.groupBox1.Text = "Sign-in";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(94, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 8;
+            // 
             // Form_sign_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::Ayubo_Drive.Properties.Resources.xzbGk82;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(682, 387);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label_welcome);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form_sign_in";
             this.Text = "Sign in";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -158,9 +167,9 @@
         private System.Windows.Forms.Button button_sign_in;
         private System.Windows.Forms.Button button_sign_up;
         private System.Windows.Forms.Label label_new_user;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

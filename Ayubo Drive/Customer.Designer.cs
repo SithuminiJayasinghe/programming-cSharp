@@ -165,7 +165,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 28);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(687, 402);
@@ -331,7 +331,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(4, 335);
+            this.button1.Location = new System.Drawing.Point(18, 335);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
@@ -452,6 +452,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Thistle;
+            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.comboBox3);
             this.tabPage2.Controls.Add(this.label51);
             this.tabPage2.Controls.Add(this.label50);
@@ -817,7 +818,7 @@
             this.comboBox8.DataSource = this.vehicleTypeBindingSource2;
             this.comboBox8.DisplayMember = "V_Type_Name";
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(15, 31);
+            this.comboBox8.Location = new System.Drawing.Point(15, 32);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(121, 21);
             this.comboBox8.TabIndex = 6;

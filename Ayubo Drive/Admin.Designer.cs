@@ -200,7 +200,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(137, 43);
+            this.label11.Location = new System.Drawing.Point(155, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 13);
             this.label11.TabIndex = 18;
@@ -238,7 +238,7 @@
             // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(140, 220);
+            this.textBox20.Location = new System.Drawing.Point(158, 201);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(100, 20);
             this.textBox20.TabIndex = 14;
@@ -246,7 +246,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(31, 220);
+            this.label24.Location = new System.Drawing.Point(31, 201);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(53, 13);
             this.label24.TabIndex = 13;
@@ -254,14 +254,14 @@
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(140, 178);
+            this.textBox21.Location = new System.Drawing.Point(158, 159);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(100, 20);
             this.textBox21.TabIndex = 12;
             // 
             // textBox22
             // 
-            this.textBox22.Location = new System.Drawing.Point(140, 133);
+            this.textBox22.Location = new System.Drawing.Point(158, 114);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(100, 20);
             this.textBox22.TabIndex = 11;
@@ -269,7 +269,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(31, 133);
+            this.label25.Location = new System.Drawing.Point(31, 114);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(98, 13);
             this.label25.TabIndex = 9;
@@ -278,7 +278,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(31, 178);
+            this.label26.Location = new System.Drawing.Point(31, 159);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(80, 13);
             this.label26.TabIndex = 10;
@@ -286,7 +286,7 @@
             // 
             // textBox23
             // 
-            this.textBox23.Location = new System.Drawing.Point(140, 91);
+            this.textBox23.Location = new System.Drawing.Point(158, 63);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(100, 20);
             this.textBox23.TabIndex = 8;
@@ -294,7 +294,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(31, 43);
+            this.label27.Location = new System.Drawing.Point(31, 24);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(47, 13);
             this.label27.TabIndex = 0;
@@ -303,7 +303,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(31, 91);
+            this.label28.Location = new System.Drawing.Point(31, 63);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(64, 13);
             this.label28.TabIndex = 1;
@@ -671,6 +671,7 @@
             this.button7.TabIndex = 8;
             this.button7.Text = "Back";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label4
             // 

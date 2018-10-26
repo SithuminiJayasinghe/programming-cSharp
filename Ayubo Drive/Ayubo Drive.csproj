@@ -117,6 +117,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Ayubo_driveDataSet.xsc">
       <DependentUpon>Ayubo_driveDataSet.xsd</DependentUpon>
@@ -141,6 +142,102 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black-Dark-Lamborghini-Background-for-Laptop-Download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\926859_black-car-hd-wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-mclaren-mp4-12c-1920x1080-wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\40184648-rear-view-of-red-sports-car-on-black-background- %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xzbGk8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\103948745-modern-white-sports-car-in-a-spotlight-on-a-black-background-front-view-3d-render-luxury-cars-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\926859_black-car-hd-wallpaper1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black-Dark-Lamborghini-Background-for-Laptop-Download1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\40184648-rear-view-of-red-sports-car-on-black-background-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-ferrari-background-1920x1080-1009072.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xzbGk81.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ws_Black_BMW_5_Series_Section_1680x1050.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-ferrari-background-1920x1080-10090721.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\103948745-modern-white-sports-car-in-a-spotlight-on-a-black-background-front-view-3d-render-luxury-cars-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaper2you_526793.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaper2you_5267931.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\926859_black-car-hd-wallpaper2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xzbGk82.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\40184648-rear-view-of-red-sports-car-on-black-background-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-porsche-sportscar-porsche.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W-Motors-Lykan-Hypersport-5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-mclaren-mp4-12c-1920x1080-wallpaper1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\81.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\764241_picture-2016-mercedes-benz-hd-desktop-backgrounds-wallpapers-cars_1920x1080_h %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ws_Black_BMW_5_Series_Section_1680x10501.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\926859_black-car-hd-wallpaper3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-porsche-sportscar-porsche1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
