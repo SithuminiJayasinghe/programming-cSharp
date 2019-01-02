@@ -77,7 +77,7 @@
             this.button_sign_in.Location = new System.Drawing.Point(119, 109);
             this.button_sign_in.Name = "button_sign_in";
             this.button_sign_in.Size = new System.Drawing.Size(75, 23);
-            this.button_sign_in.TabIndex = 3;
+            this.button_sign_in.TabIndex = 4;
             this.button_sign_in.Text = "Sign in";
             this.button_sign_in.UseVisualStyleBackColor = true;
             this.button_sign_in.Click += new System.EventHandler(this.button_sign_in_Click);
@@ -87,7 +87,7 @@
             this.button_sign_up.Location = new System.Drawing.Point(119, 262);
             this.button_sign_up.Name = "button_sign_up";
             this.button_sign_up.Size = new System.Drawing.Size(75, 23);
-            this.button_sign_up.TabIndex = 4;
+            this.button_sign_up.TabIndex = 6;
             this.button_sign_up.Text = "Sign up";
             this.button_sign_up.UseVisualStyleBackColor = true;
             this.button_sign_up.Click += new System.EventHandler(this.button_sign_up_Click);
@@ -106,7 +106,7 @@
             this.textBox2.Location = new System.Drawing.Point(94, 73);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.textBox2.TabIndex = 3;
             this.textBox2.UseSystemPasswordChar = true;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -134,10 +134,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 34);
+            this.textBox1.Location = new System.Drawing.Point(62, 34);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.textBox1.TabIndex = 0;
             // 
             // Form_sign_in
             // 
@@ -150,7 +150,6 @@
             this.Controls.Add(this.label_welcome);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form_sign_in";
-            this.Text = "Sign in";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

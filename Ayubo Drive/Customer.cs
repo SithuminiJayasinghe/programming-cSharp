@@ -137,12 +137,23 @@ namespace Ayubo_Drive
 
                 string startKm = textBox4.Text;
                 PrintConsole("Start km ", startKm.ToString());
-
+                PrintConsole("Start km String.IsNullOrEmpty(startKm)", String.IsNullOrEmpty(startKm) + "");
                 string endKm = textBox5.Text;
                 PrintConsole("End km ", endKm.ToString());
 
-                int sk = Convert.ToInt32(startKm);
-                int ek = Convert.ToInt32(endKm);
+                int sk =0;
+                int ek =0;
+                if (!String.IsNullOrEmpty(startKm))
+                {
+                    sk = Convert.ToInt32(startKm);
+                }
+
+                if (!String.IsNullOrEmpty(endKm))
+                {
+                    ek = Convert.ToInt32(endKm);
+                }
+
+               
 
                 int distance = ek - sk;
                 PrintConsole("Distance ", distance.ToString());

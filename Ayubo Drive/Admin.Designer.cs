@@ -160,7 +160,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(497, 344);
+            this.tabPage7.Size = new System.Drawing.Size(425, 344);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Drivers";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -315,7 +315,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(497, 344);
+            this.tabPage6.Size = new System.Drawing.Size(425, 344);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Vehicle types";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -474,7 +474,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(497, 344);
+            this.tabPage3.Size = new System.Drawing.Size(425, 344);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Vehicles";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -575,10 +575,11 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(497, 344);
+            this.tabPage2.Size = new System.Drawing.Size(729, 344);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Rent history";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // dataGridView1
             // 
@@ -594,9 +595,9 @@
             this.dNameDataGridViewTextBoxColumn,
             this.durationDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.jobBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 22);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(663, 253);
+            this.dataGridView1.Size = new System.Drawing.Size(727, 253);
             this.dataGridView1.TabIndex = 0;
             // 
             // jIdDataGridViewTextBoxColumn
@@ -720,7 +721,7 @@
             this.tab1.Location = new System.Drawing.Point(12, 12);
             this.tab1.Name = "tab1";
             this.tab1.SelectedIndex = 0;
-            this.tab1.Size = new System.Drawing.Size(505, 370);
+            this.tab1.Size = new System.Drawing.Size(433, 370);
             this.tab1.TabIndex = 0;
             // 
             // tabPage4
@@ -729,7 +730,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(497, 344);
+            this.tabPage4.Size = new System.Drawing.Size(425, 344);
             this.tabPage4.TabIndex = 7;
             this.tabPage4.Text = "Packages";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -971,7 +972,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 404);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(464, 404);
             this.Controls.Add(this.tab1);
             this.Name = "Admin";
             this.Text = "Admin";

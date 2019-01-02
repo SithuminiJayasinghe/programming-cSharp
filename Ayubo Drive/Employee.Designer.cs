@@ -46,21 +46,21 @@
             this.driverIdToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hireOrRentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hireOrRentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
@@ -75,8 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayubodriveDataSetBindingSource3)).BeginInit();
             this.fillBy1ToolStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -175,17 +175,6 @@
             this.tabPage2.Text = "Job history";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.ayubodriveDataSetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(629, 247);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
@@ -206,41 +195,12 @@
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // durationDataGridViewTextBoxColumn
+            // jIdDataGridViewTextBoxColumn
             // 
-            this.durationDataGridViewTextBoxColumn.DataPropertyName = "Duration";
-            this.durationDataGridViewTextBoxColumn.HeaderText = "Duration";
-            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
-            // 
-            // dNameDataGridViewTextBoxColumn
-            // 
-            this.dNameDataGridViewTextBoxColumn.DataPropertyName = "D_Name";
-            this.dNameDataGridViewTextBoxColumn.HeaderText = "D_Name";
-            this.dNameDataGridViewTextBoxColumn.Name = "dNameDataGridViewTextBoxColumn";
-            // 
-            // vTypeDataGridViewTextBoxColumn
-            // 
-            this.vTypeDataGridViewTextBoxColumn.DataPropertyName = "V_Type";
-            this.vTypeDataGridViewTextBoxColumn.HeaderText = "V_Type";
-            this.vTypeDataGridViewTextBoxColumn.Name = "vTypeDataGridViewTextBoxColumn";
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            // 
-            // hireOrRentDataGridViewTextBoxColumn
-            // 
-            this.hireOrRentDataGridViewTextBoxColumn.DataPropertyName = "Hire_Or_Rent";
-            this.hireOrRentDataGridViewTextBoxColumn.HeaderText = "Hire_Or_Rent";
-            this.hireOrRentDataGridViewTextBoxColumn.Name = "hireOrRentDataGridViewTextBoxColumn";
-            // 
-            // cNameDataGridViewTextBoxColumn
-            // 
-            this.cNameDataGridViewTextBoxColumn.DataPropertyName = "C_Name";
-            this.cNameDataGridViewTextBoxColumn.HeaderText = "C_Name";
-            this.cNameDataGridViewTextBoxColumn.Name = "cNameDataGridViewTextBoxColumn";
+            this.jIdDataGridViewTextBoxColumn.DataPropertyName = "J_Id";
+            this.jIdDataGridViewTextBoxColumn.HeaderText = "J_Id";
+            this.jIdDataGridViewTextBoxColumn.Name = "jIdDataGridViewTextBoxColumn";
+            this.jIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cIdDataGridViewTextBoxColumn
             // 
@@ -248,12 +208,52 @@
             this.cIdDataGridViewTextBoxColumn.HeaderText = "C_Id";
             this.cIdDataGridViewTextBoxColumn.Name = "cIdDataGridViewTextBoxColumn";
             // 
-            // jIdDataGridViewTextBoxColumn
+            // cNameDataGridViewTextBoxColumn
             // 
-            this.jIdDataGridViewTextBoxColumn.DataPropertyName = "J_Id";
-            this.jIdDataGridViewTextBoxColumn.HeaderText = "J_Id";
-            this.jIdDataGridViewTextBoxColumn.Name = "jIdDataGridViewTextBoxColumn";
-            this.jIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cNameDataGridViewTextBoxColumn.DataPropertyName = "C_Name";
+            this.cNameDataGridViewTextBoxColumn.HeaderText = "C_Name";
+            this.cNameDataGridViewTextBoxColumn.Name = "cNameDataGridViewTextBoxColumn";
+            // 
+            // hireOrRentDataGridViewTextBoxColumn
+            // 
+            this.hireOrRentDataGridViewTextBoxColumn.DataPropertyName = "Hire_Or_Rent";
+            this.hireOrRentDataGridViewTextBoxColumn.HeaderText = "Hire_Or_Rent";
+            this.hireOrRentDataGridViewTextBoxColumn.Name = "hireOrRentDataGridViewTextBoxColumn";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // vTypeDataGridViewTextBoxColumn
+            // 
+            this.vTypeDataGridViewTextBoxColumn.DataPropertyName = "V_Type";
+            this.vTypeDataGridViewTextBoxColumn.HeaderText = "V_Type";
+            this.vTypeDataGridViewTextBoxColumn.Name = "vTypeDataGridViewTextBoxColumn";
+            // 
+            // dNameDataGridViewTextBoxColumn
+            // 
+            this.dNameDataGridViewTextBoxColumn.DataPropertyName = "D_Name";
+            this.dNameDataGridViewTextBoxColumn.HeaderText = "D_Name";
+            this.dNameDataGridViewTextBoxColumn.Name = "dNameDataGridViewTextBoxColumn";
+            // 
+            // durationDataGridViewTextBoxColumn
+            // 
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "Duration";
+            this.durationDataGridViewTextBoxColumn.HeaderText = "Duration";
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.ayubodriveDataSetBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(25, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(629, 247);
+            this.dataGridView1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -269,24 +269,14 @@
             this.tabPage1.Text = "Profile";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ID";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(150, 93);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(16, 13);
+            this.lblId.TabIndex = 3;
+            this.lblId.Text = "...";
             // 
             // lblName
             // 
@@ -298,14 +288,24 @@
             this.lblName.Text = "...";
             this.lblName.Click += new System.EventHandler(this.label3_Click);
             // 
-            // lblId
+            // label2
             // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(150, 93);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 3;
-            this.lblId.Text = "...";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ID";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name";
             // 
             // tabControl1
             // 
@@ -331,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(709, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(this.tabControl1);
@@ -351,8 +351,8 @@
             this.fillBy1ToolStrip.ResumeLayout(false);
             this.fillBy1ToolStrip.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
