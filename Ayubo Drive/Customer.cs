@@ -43,7 +43,7 @@ namespace Ayubo_Drive
 
         private int doCalulation()
         {
-            if(comboBox1.SelectedValue != null && comboBox7.SelectedValue != null)
+            if(comboBox1.SelectedValue != null && comboBox7.SelectedValue != null )
             {
                 string vTypeName = comboBox1.Text;
                 string vTypeID = comboBox1.SelectedValue.ToString();
@@ -133,7 +133,7 @@ namespace Ayubo_Drive
                 PrintConsole("on Changed combo1 driverId ", packageId);
 
 
-              
+
 
                 string startKm = textBox4.Text;
                 PrintConsole("Start km ", startKm.ToString());
@@ -141,8 +141,8 @@ namespace Ayubo_Drive
                 string endKm = textBox5.Text;
                 PrintConsole("End km ", endKm.ToString());
 
-                int sk =0;
-                int ek =0;
+                int sk = 0;
+                int ek = 0;
                 if (!String.IsNullOrEmpty(startKm))
                 {
                     sk = Convert.ToInt32(startKm);
@@ -153,12 +153,11 @@ namespace Ayubo_Drive
                     ek = Convert.ToInt32(endKm);
                 }
 
-               
 
                 int distance = ek - sk;
                 PrintConsole("Distance ", distance.ToString());
 
-                p=c.GetPackageById(packageId);
+                p = c.GetPackageById(packageId);
                 PrintConsole("MaxKm ", p.Max_Km.ToString());
                 int Max_Km = Convert.ToInt32(p.Max_Km);
                 int Extra_Km_Rate = Convert.ToInt32(p.Extra_Km_Rate);
@@ -193,7 +192,7 @@ namespace Ayubo_Drive
 
 
 
-                
+
                 DateTime starttime = dateTimePicker5.Value;
                 DateTime endtime = dateTimePicker6.Value;
                 PrintConsole("starttime ", starttime.ToString());
@@ -205,7 +204,7 @@ namespace Ayubo_Drive
                 double tdf = timedifference.TotalHours;
                 PrintConsole("tdf ", tdf.ToString());
 
-            
+
                 p = c.GetPackageById(packageId);
 
                 int Extra_Hr_Rate = Convert.ToInt32(p.Extra_Hr_Rate);
@@ -220,7 +219,7 @@ namespace Ayubo_Drive
 
                     if (radioButton1.Checked == true)
                     {
-                        label43.Text = Math.Round(waitingcharge,2).ToString();
+                        label43.Text = Math.Round(waitingcharge, 2).ToString();
 
                     }
                     if (radioButton2.Checked == true)
@@ -231,7 +230,7 @@ namespace Ayubo_Drive
 
                 }
 
-                
+
 
 
 
@@ -241,33 +240,33 @@ namespace Ayubo_Drive
                 double dDays = t.TotalDays;
                 days = Convert.ToInt32(dDays);
                 PrintConsole("Number of days ", days.ToString());
-                
+
                 v = c.GetVehicleTypeById(vTypeID);
                 p = c.GetPackageById(packageId);
                 h = c.GetHireById(vTypeID);
                 int vehicle_night_park_rate = Convert.ToInt32(p.Vehicle_Night_Park_Rate_Per_Night);
                 int driver_overnight_rate = Convert.ToInt32(p.Driver_Overnight_Rate_Per_Night);
-                if (days>=2)
+                if (days >= 2)
                 {
                     overnightstaycharge = (days * vehicle_night_park_rate) + (days * driver_overnight_rate);
                     PrintConsole("overnightstaycharge ", overnightstaycharge.ToString());
 
-                    if(radioButton2.Checked==true)
+                    if (radioButton2.Checked == true)
                     {
                         label46.Text = overnightstaycharge.ToString();
                     }
-                    if(radioButton1.Checked==true)
+                    if (radioButton1.Checked == true)
                     {
                         label46.Text = "...".ToString();
                     }
                 }
 
-               
+
 
 
 
                 h = c.GetHireById(vTypeID);
-                string sql_1 = "select * from Hire where V_Type_Id ='" + comboBox8.SelectedValue + "' ";
+                string sql_1 = "select * from Package where V_Type_Id ='" + comboBox8.SelectedValue + "' ";
                 SqlCommand cmd_1 = new SqlCommand(sql_1, m_con);
                 m_con.Open();
                 SqlDataReader dreader_1 = cmd_1.ExecuteReader();
@@ -277,7 +276,7 @@ namespace Ayubo_Drive
                     PrintConsole("Sithumini", dreader_1[5].ToString());
                     PrintConsole("Sithumini_s", comboBox9.SelectedValue.ToString());
 
-                    if (dreader_1[5].ToString().Equals(comboBox9.SelectedValue.ToString()))
+                    if (dreader_1[0].ToString().Equals(comboBox9.SelectedValue.ToString()))
                     {
                         PrintConsole("Base_Cost ", dreader_1[6].ToString());
                         BaseCost = Convert.ToInt32(dreader_1[6].ToString());
@@ -297,13 +296,14 @@ namespace Ayubo_Drive
 
                         }
 
-                        
+
                     }
-                        dreader_1.Close();
-                        m_con.Close();
-                 
+
+
+                    dreader_1.Close();
+                    m_con.Close();
+
                 }
-             
 
 
 
@@ -325,22 +325,22 @@ namespace Ayubo_Drive
                     //it totalhirecost = Convert.ToInt32(totalhire);
                 }
 
-                 return totalhirecost;
+                return totalhirecost;
 
             }
             else
-            { return 0;}
-                    
-               
-                
+            { return 0; }
+
+
+
 
 
         }
-               
 
 
 
-        
+
+
 
 
         private void Customer_Load(object sender, EventArgs e)
@@ -823,6 +823,11 @@ namespace Ayubo_Drive
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
 
         }
     }

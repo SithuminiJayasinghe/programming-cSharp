@@ -149,5 +149,12 @@ namespace Ayubo_Drive
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form_sign_in fsi = new Form_sign_in();
+            fsi.Show();
+            this.Hide();
+        }
     }
 }

@@ -239,5 +239,23 @@
   <ItemGroup>
     <None Include="Resources\black-porsche-sportscar-porsche1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nissan-cars-hd-wallpapers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2012_Koenigsegg_Agera.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-hd-332.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamborghini_reventon_5-HD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supercar-wallpapers-bugatti-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tron_style_lamborghini_aventador-HD.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

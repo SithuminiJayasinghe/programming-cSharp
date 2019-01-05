@@ -85,6 +85,16 @@ namespace Ayubo_Drive.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2012_Koenigsegg_Agera {
+            get {
+                object obj = ResourceManager.GetObject("2012_Koenigsegg_Agera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _40184648_rear_view_of_red_sports_car_on_black_background_ {
             get {
                 object obj = ResourceManager.GetObject("40184648-rear-view-of-red-sports-car-on-black-background-", resourceCulture);
@@ -266,6 +276,16 @@ namespace Ayubo_Drive.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap car_hd_332 {
+            get {
+                object obj = ResourceManager.GetObject("car-hd-332", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -299,6 +319,46 @@ namespace Ayubo_Drive.Properties {
         internal static System.Drawing.Bitmap images1 {
             get {
                 object obj = ResourceManager.GetObject("images1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lamborghini_reventon_5_HD {
+            get {
+                object obj = ResourceManager.GetObject("lamborghini_reventon_5-HD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nissan_cars_hd_wallpapers {
+            get {
+                object obj = ResourceManager.GetObject("nissan-cars-hd-wallpapers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap supercar_wallpapers_bugatti_4 {
+            get {
+                object obj = ResourceManager.GetObject("supercar-wallpapers-bugatti-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tron_style_lamborghini_aventador_HD {
+            get {
+                object obj = ResourceManager.GetObject("tron_style_lamborghini_aventador-HD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

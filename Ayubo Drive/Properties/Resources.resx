@@ -127,8 +127,14 @@
   <data name="W-Motors-Lykan-Hypersport-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\W-Motors-Lykan-Hypersport-5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="2012_Koenigsegg_Agera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2012_Koenigsegg_Agera.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ws_Black_BMW_5_Series_Section_1680x10501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ws_Black_BMW_5_Series_Section_1680x10501.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black-mclaren-mp4-12c-1920x1080-wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black-mclaren-mp4-12c-1920x1080-wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ws_Black_BMW_5_Series_Section_1680x1050" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ws_Black_BMW_5_Series_Section_1680x1050.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,9 +166,6 @@
   <data name="black-ferrari-background-1920x1080-1009072" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black-ferrari-background-1920x1080-1009072.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="926859_black-car-hd-wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\926859_black-car-hd-wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,14 +196,20 @@
   <data name="xzbGk82" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xzbGk82.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="black-mclaren-mp4-12c-1920x1080-wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\black-mclaren-mp4-12c-1920x1080-wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="black-porsche-sportscar-porsche1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black-porsche-sportscar-porsche1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="black-ferrari-background-1920x1080-10090721" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black-ferrari-background-1920x1080-10090721.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="40184648-rear-view-of-red-sports-car-on-black-background-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\40184648-rear-view-of-red-sports-car-on-black-background-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nissan-cars-hd-wallpapers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nissan-cars-hd-wallpapers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="xzbGk81" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xzbGk81.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,7 +220,16 @@
   <data name="images (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (1)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="black-porsche-sportscar-porsche1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\black-porsche-sportscar-porsche1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="car-hd-332" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car-hd-332.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lamborghini_reventon_5-HD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lamborghini_reventon_5-HD.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="supercar-wallpapers-bugatti-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\supercar-wallpapers-bugatti-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tron_style_lamborghini_aventador-HD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tron_style_lamborghini_aventador-HD.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

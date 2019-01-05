@@ -497,6 +497,7 @@
             this.tabPage2.Size = new System.Drawing.Size(679, 376);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hire";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // comboBox3
             // 
