@@ -43,297 +43,378 @@ namespace Ayubo_Drive
 
         private int doCalulation()
         {
-            if(comboBox1.SelectedValue != null && comboBox7.SelectedValue != null )
-            {
-                string vTypeName = comboBox1.Text;
-                string vTypeID = comboBox1.SelectedValue.ToString();
-                PrintConsole("on Changed combo1 vTypeName ", vTypeName);
-                PrintConsole("on Changed combo1 vTypeID ", vTypeID);
+            
+                if (comboBox1.SelectedValue != null && comboBox7.SelectedValue != null)
+                {
+                    string vTypeName = comboBox1.Text;
+                    string vTypeID = comboBox1.SelectedValue.ToString();
+                    PrintConsole("on Changed combo1 vTypeName ", vTypeName);
+                    PrintConsole("on Changed combo1 vTypeID ", vTypeID);
 
-                String driverName = comboBox7.Text;
-                String driverId = comboBox7.SelectedValue.ToString();
-                PrintConsole("on Changed combo1 driverName ", driverName);
-                PrintConsole("on Changed combo1 driverId ", driverId);
+                    String driverName = comboBox7.Text;
+                    String driverId = comboBox7.SelectedValue.ToString();
+                    PrintConsole("on Changed combo1 driverName ", driverName);
+                    PrintConsole("on Changed combo1 driverId ", driverId);
 
-                string packageId = comboBox9.Text;
-                PrintConsole("on Changed combo1 packageId ", packageId);
+                    string packageId = comboBox9.Text;
+                    PrintConsole("on Changed combo1 packageId ", packageId);
 
 
-                DateTime d1 = dateTimePicker1.Value;
-                DateTime d2 = dateTimePicker2.Value;
+                    DateTime d1 = dateTimePicker1.Value;
+                    DateTime d2 = dateTimePicker2.Value;
 
-                TimeSpan t = d2 - d1;
-                double dDays = t.TotalDays;
-                days = Convert.ToInt32(dDays);
-                PrintConsole("Number of days ", days.ToString());
+                    TimeSpan t = d2 - d1;
+                    double dDays = t.TotalDays;
+                    days = Convert.ToInt32(dDays);
+                    PrintConsole("Number of days ", days.ToString());
 
-               
-                d = c.GetDriverRowById(driverId);
-                v = c.GetVehicleTypeById(vTypeID);
-    
-                PrintConsole("Driver Rate ", d.D_Rate_Per_Hr.ToString());
-                PrintConsole("Driver D_Daily_Rate ", d.D_Daily_Rate.ToString());
-                PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
-                PrintConsole("Vehicle V_Weekly_Rate ", v.V_Weekly_Rate.ToString());
 
-                     //lets find the no of months
-                int numberofMonths = days / 30;
-                PrintConsole("numberofMonths", numberofMonths.ToString());
+                    d = c.GetDriverRowById(driverId);
+                    v = c.GetVehicleTypeById(vTypeID);
 
-                // lets find the no of weeks
-             
-               
-                    int numberOfWeeks = (days%30) / 7;
+                    PrintConsole("Driver Rate ", d.D_Rate_Per_Hr.ToString());
+                    PrintConsole("Driver D_Daily_Rate ", d.D_Daily_Rate.ToString());
+                    PrintConsole("Vehicle V_Rate ", v.V_Rate.ToString());
+                    PrintConsole("Vehicle V_Weekly_Rate ", v.V_Weekly_Rate.ToString());
+
+                    //lets find the no of months
+                    int numberofMonths = days / 30;
+                    PrintConsole("numberofMonths", numberofMonths.ToString());
+
+                    // lets find the no of weeks
+
+
+                    int numberOfWeeks = (days % 30) / 7;
                     PrintConsole("numberOfWeeks ", numberOfWeeks.ToString());
-               
-                // lets find no of remaining days
-    
-               
-                    int remainingDays = (days%30) % 7;
+
+                    // lets find no of remaining days
+
+
+                    int remainingDays = (days % 30) % 7;
                     PrintConsole("remainingDays ", remainingDays.ToString());
 
 
 
-                int totalValue = V_Monthly_Rent * numberofMonths + v.V_Weekly_Rate * numberOfWeeks + v.V_Rate * remainingDays;
-                if (radioButton_without_a_driver.Checked == true)
-                {
-                     
-                    PrintConsole("totalValue without driver ", totalValue.ToString());
+                    int totalValue = V_Monthly_Rent * numberofMonths + v.V_Weekly_Rate * numberOfWeeks + v.V_Rate * remainingDays;
+                    if (radioButton_without_a_driver.Checked == true)
+                    {
 
+                        PrintConsole("totalValue without driver ", totalValue.ToString());
+
+                    }
+                    else
+                    {
+                        // This is with driver. So we have to add driver rate.
+                        totalValue = totalValue + d.D_Daily_Rate * days;
+                        PrintConsole("totalValue with driver ", totalValue.ToString());
+                    }
+                    lblCost.Text = totalValue.ToString();
+                    lblNoOfDays.Text = days.ToString();
+                    label5.Text = v.V_Rate.ToString();
+                    label49.Text = v.V_Weekly_Rate.ToString();
+                    return totalValue;
                 }
                 else
                 {
-                    // This is with driver. So we have to add driver rate.
-                    totalValue = totalValue + d.D_Daily_Rate * days;
-                    PrintConsole("totalValue with driver ", totalValue.ToString());
+                    return 0;
                 }
-                lblCost.Text = totalValue.ToString();
-                lblNoOfDays.Text = days.ToString();
-                label5.Text = v.V_Rate.ToString();
-                label49.Text = v.V_Weekly_Rate.ToString();
-                return totalValue;
-            } else
-            {
-                return 0;
-            }
+
+            
+        
+
         }
+
+
+
 
         private double doCalculation_Hire()
         {
-            if (comboBox8.SelectedValue != null && comboBox9.SelectedValue != null)
+            try
             {
-                string vTypeName = comboBox8.Text;
-                string vTypeID = comboBox8.SelectedValue.ToString();
-                PrintConsole("on Changed combo1 vTypeName ", vTypeName);
-                PrintConsole("on Changed combo1 vTypeID ", vTypeID);
-
-                string packageName = comboBox9.Text;
-                string packageId = comboBox9.SelectedValue.ToString();
-                PrintConsole("on Changed combo1 driverName ", packageName);
-                PrintConsole("on Changed combo1 driverId ", packageId);
-
-
-
-
-                string startKm = textBox4.Text;
-                PrintConsole("Start km ", startKm.ToString());
-                PrintConsole("Start km String.IsNullOrEmpty(startKm)", String.IsNullOrEmpty(startKm) + "");
-                string endKm = textBox5.Text;
-                PrintConsole("End km ", endKm.ToString());
-
-                int sk = 0;
-                int ek = 0;
-                if (!String.IsNullOrEmpty(startKm))
+                if (comboBox8.SelectedValue != null && comboBox9.SelectedValue != null)
                 {
-                    sk = Convert.ToInt32(startKm);
-                }
+                    string vTypeName = comboBox8.Text;
+                    string vTypeID = comboBox8.SelectedValue.ToString();
+                    PrintConsole("on Changed combo1 vTypeName ", vTypeName);
+                    PrintConsole("on Changed combo1 vTypeID ", vTypeID);
 
-                if (!String.IsNullOrEmpty(endKm))
-                {
-                    ek = Convert.ToInt32(endKm);
-                }
+                    string packageName = comboBox9.Text;
+                    string packageId = comboBox9.SelectedValue.ToString();
+                    PrintConsole("on Changed combo1 driverName ", packageName);
+                    PrintConsole("on Changed combo1 driverId ", packageId);
 
-
-                int distance = ek - sk;
-                PrintConsole("Distance ", distance.ToString());
-
-                p = c.GetPackageById(packageId);
-                PrintConsole("MaxKm ", p.Max_Km.ToString());
-                int Max_Km = Convert.ToInt32(p.Max_Km);
-                int Extra_Km_Rate = Convert.ToInt32(p.Extra_Km_Rate);
-                int packagecost = Convert.ToInt32(p.Cost);
-
-
-                if (Max_Km < distance)
-                {
-                    extrakmcharge = (distance - Max_Km) * Extra_Km_Rate;
-                    PrintConsole("extrakmcharge ", extrakmcharge.ToString());
-                    if (radioButton1.Checked == true)
+                    h = c.GetHireById(vTypeID);
+                    string sql_1 = "select * from Package where V_Type_Id ='" + comboBox8.SelectedValue + "' ";
+                    SqlCommand cmd_1 = new SqlCommand(sql_1, m_con);
+                    m_con.Open();
+                    SqlDataReader dreader_1 = cmd_1.ExecuteReader();
+                    try
                     {
-                        label44.Text = extrakmcharge.ToString();
-                        label47.Text = "...".ToString();
+                        if (dreader_1.Read())
+                        {
+                            PrintConsole("Sithumini", dreader_1[5].ToString());
+                            PrintConsole("Sithumini_s", comboBox9.SelectedValue.ToString());
+
+                            if (dreader_1[0].ToString().Equals(comboBox9.SelectedValue.ToString()))
+                            {
+                                PrintConsole("Base_Cost ", dreader_1[6].ToString());
+                                BaseCost = Convert.ToInt32(dreader_1[6].ToString());
 
 
-                    }
-                    if (radioButton2.Checked == true)
-                    {
-                        label47.Text = extrakmcharge.ToString();
-                        label44.Text = "...".ToString();
+                                //hireBaseCost = Convert.ToInt32(dreader[6].ToString());
+                                if (radioButton1.Checked == true)
+                                {
+                                    lblbasehirecharge.Text = BaseCost.ToString();
+                                    label45.Text = "...".ToString();
 
-                    }
-                }
-                else
-                {
-                    label44.Text = "...".ToString();
-                    label47.Text = "...".ToString();
+                                }
+                                if (radioButton2.Checked == true)
+                                {
+                                    label45.Text = BaseCost.ToString();
+                                    lblbasehirecharge.Text = "...".ToString();
 
-                }
-
+                                }
 
 
+                            }
 
-
-                DateTime starttime = dateTimePicker5.Value;
-                DateTime endtime = dateTimePicker6.Value;
-                PrintConsole("starttime ", starttime.ToString());
-                PrintConsole("endtime ", endtime.ToString());
-
-                TimeSpan timedifference = endtime - starttime;
-                PrintConsole("timedifference ", timedifference.ToString());
-
-                double tdf = timedifference.TotalHours;
-                PrintConsole("tdf ", tdf.ToString());
-
-
-                p = c.GetPackageById(packageId);
-
-                int Extra_Hr_Rate = Convert.ToInt32(p.Extra_Hr_Rate);
-                PrintConsole("Extra hr rate ", p.Extra_Hr_Rate.ToString());
-                int Max_Hr = Convert.ToInt32(p.Max_Hr);
-
-                if (tdf > Max_Hr)
-                {
-                    waitingcharge = (tdf - Max_Hr) * Extra_Hr_Rate;
-                    PrintConsole("waitingcharge ", waitingcharge.ToString());
-
-
-                    if (radioButton1.Checked == true)
-                    {
-                        label43.Text = Math.Round(waitingcharge, 2).ToString();
-
-                    }
-                    if (radioButton2.Checked == true)
-                    {
-                        label43.Text = "...".ToString();
-
+                        }
+                        dreader_1.Close();
                     }
 
-                }
-
-
-
-
-
-                DateTime d3 = dateTimePicker3.Value;
-                DateTime d4 = dateTimePicker4.Value;
-                TimeSpan t = d4 - d3;
-                double dDays = t.TotalDays;
-                days = Convert.ToInt32(dDays);
-                PrintConsole("Number of days ", days.ToString());
-
-                v = c.GetVehicleTypeById(vTypeID);
-                p = c.GetPackageById(packageId);
-                h = c.GetHireById(vTypeID);
-                int vehicle_night_park_rate = Convert.ToInt32(p.Vehicle_Night_Park_Rate_Per_Night);
-                int driver_overnight_rate = Convert.ToInt32(p.Driver_Overnight_Rate_Per_Night);
-                if (days >= 2)
-                {
-                    overnightstaycharge = (days * vehicle_night_park_rate) + (days * driver_overnight_rate);
-                    PrintConsole("overnightstaycharge ", overnightstaycharge.ToString());
-
-                    if (radioButton2.Checked == true)
+                    catch (Exception ex)
                     {
-                        label46.Text = overnightstaycharge.ToString();
+
+                        MessageBox.Show("Error");
                     }
-                    if (radioButton1.Checked == true)
+
+                    finally
                     {
-                        label46.Text = "...".ToString();
+                        m_con.Close();
                     }
-                }
 
 
 
 
+                    string startKm = textBox4.Text;
+                    PrintConsole("Start km ", startKm.ToString());
+                    PrintConsole("Start km String.IsNullOrEmpty(startKm)", String.IsNullOrEmpty(startKm) + "");
+                    string endKm = textBox5.Text;
+                    PrintConsole("End km ", endKm.ToString());
 
-                h = c.GetHireById(vTypeID);
-                string sql_1 = "select * from Package where V_Type_Id ='" + comboBox8.SelectedValue + "' ";
-                SqlCommand cmd_1 = new SqlCommand(sql_1, m_con);
-                m_con.Open();
-                SqlDataReader dreader_1 = cmd_1.ExecuteReader();
-
-                if (dreader_1.Read())
-                {
-                    PrintConsole("Sithumini", dreader_1[5].ToString());
-                    PrintConsole("Sithumini_s", comboBox9.SelectedValue.ToString());
-
-                    if (dreader_1[0].ToString().Equals(comboBox9.SelectedValue.ToString()))
+                    int sk = 0;
+                    int ek = 0;
+                    if (!String.IsNullOrEmpty(startKm))
                     {
-                        PrintConsole("Base_Cost ", dreader_1[6].ToString());
-                        BaseCost = Convert.ToInt32(dreader_1[6].ToString());
+                        sk = Convert.ToInt32(startKm);
+                    }
+
+                    if (!String.IsNullOrEmpty(endKm))
+                    {
+                        ek = Convert.ToInt32(endKm);
+                    }
 
 
-                        //hireBaseCost = Convert.ToInt32(dreader[6].ToString());
+                    int distance = ek - sk;
+                    PrintConsole("Distance ", distance.ToString());
+
+                    p = c.GetPackageById(packageId);
+                    PrintConsole("MaxKm ", p.Max_Km.ToString());
+                    int Max_Km = Convert.ToInt32(p.Max_Km);
+                    int Extra_Km_Rate = Convert.ToInt32(p.Extra_Km_Rate);
+                    int packagecost = Convert.ToInt32(p.Cost);
+
+
+                    if (Max_Km < distance)
+                    {
+                        extrakmcharge = (distance - Max_Km) * Extra_Km_Rate;
+                        PrintConsole("extrakmcharge ", extrakmcharge.ToString());
                         if (radioButton1.Checked == true)
                         {
-                            lblbasehirecharge.Text = BaseCost.ToString();
-                            label45.Text = "...".ToString();
+                            label44.Text = extrakmcharge.ToString();
+                            label47.Text = "...".ToString();
+
 
                         }
                         if (radioButton2.Checked == true)
                         {
-                            label45.Text = BaseCost.ToString();
-                            lblbasehirecharge.Text = "...".ToString();
+                            label47.Text = extrakmcharge.ToString();
+                            label44.Text = "...".ToString();
 
                         }
-
+                    }
+                    else
+                    {
+                        label44.Text = "...".ToString();
+                        label47.Text = "...".ToString();
 
                     }
 
 
-                    dreader_1.Close();
-                    m_con.Close();
+
+
+
+                    DateTime starttime = dateTimePicker5.Value;
+                    DateTime endtime = dateTimePicker6.Value;
+                    PrintConsole("starttime ", starttime.ToString());
+                    PrintConsole("endtime ", endtime.ToString());
+
+                    TimeSpan timedifference = endtime - starttime;
+                    PrintConsole("timedifference ", timedifference.ToString());
+
+                    double tdf = timedifference.TotalHours;
+                    PrintConsole("tdf ", tdf.ToString());
+
+
+                    p = c.GetPackageById(packageId);
+
+                    int Extra_Hr_Rate = Convert.ToInt32(p.Extra_Hr_Rate);
+                    PrintConsole("Extra hr rate ", p.Extra_Hr_Rate.ToString());
+                    int Max_Hr = Convert.ToInt32(p.Max_Hr);
+
+                    if (tdf > Max_Hr)
+                    {
+                        waitingcharge = (tdf - Max_Hr) * Extra_Hr_Rate;
+                        PrintConsole("waitingcharge ", waitingcharge.ToString());
+
+
+                        if (radioButton1.Checked == true)
+                        {
+                            label43.Text = Math.Round(waitingcharge, 2).ToString();
+
+                        }
+                        if (radioButton2.Checked == true)
+                        {
+                            label43.Text = "...".ToString();
+
+                        }
+
+                    }
+
+
+
+
+
+                    DateTime d3 = dateTimePicker3.Value;
+                    DateTime d4 = dateTimePicker4.Value;
+                    TimeSpan t = d4 - d3;
+                    double dDays = t.TotalDays;
+                    days = Convert.ToInt32(dDays);
+                    PrintConsole("Number of days ", days.ToString());
+
+                    v = c.GetVehicleTypeById(vTypeID);
+                    p = c.GetPackageById(packageId);
+                    h = c.GetHireById(vTypeID);
+                    int vehicle_night_park_rate = Convert.ToInt32(p.Vehicle_Night_Park_Rate_Per_Night);
+                    int driver_overnight_rate = Convert.ToInt32(p.Driver_Overnight_Rate_Per_Night);
+                    if (days >= 2)
+                    {
+                        overnightstaycharge = (days * vehicle_night_park_rate) + (days * driver_overnight_rate);
+                        PrintConsole("overnightstaycharge ", overnightstaycharge.ToString());
+
+                        if (radioButton2.Checked == true)
+                        {
+                            label46.Text = overnightstaycharge.ToString();
+                        }
+                        if (radioButton1.Checked == true)
+                        {
+                            label46.Text = "...".ToString();
+                        }
+                    }
+
+
+
+
+
+                    //h = c.GetHireById(vTypeID);
+                    //string sql_1 = "select * from Package where V_Type_Id ='" + comboBox8.SelectedValue + "' ";
+                    //SqlCommand cmd_1 = new SqlCommand(sql_1, m_con);
+                    //m_con.Open();
+                    //SqlDataReader dreader_1 = cmd_1.ExecuteReader();
+                    //try
+                    //{
+                    //    if (dreader_1.Read())
+                    //    {
+                    //        PrintConsole("Sithumini", dreader_1[5].ToString());
+                    //        PrintConsole("Sithumini_s", comboBox9.SelectedValue.ToString());
+
+                    //        if (dreader_1[0].ToString().Equals(comboBox9.SelectedValue.ToString()))
+                    //        {
+                    //            PrintConsole("Base_Cost ", dreader_1[6].ToString());
+                    //            BaseCost = Convert.ToInt32(dreader_1[6].ToString());
+
+
+                    //            //hireBaseCost = Convert.ToInt32(dreader[6].ToString());
+                    //            if (radioButton1.Checked == true)
+                    //            {
+                    //                lblbasehirecharge.Text = BaseCost.ToString();
+                    //                label45.Text = "...".ToString();
+
+                    //            }
+                    //            if (radioButton2.Checked == true)
+                    //            {
+                    //                label45.Text = BaseCost.ToString();
+                    //                lblbasehirecharge.Text = "...".ToString();
+
+                    //            }
+
+
+                    //        }
+
+                    //    }
+                    //    dreader_1.Close();
+                    //}
+
+                    //catch (Exception ex)
+                    //{
+
+                    //    MessageBox.Show("Error");
+                    //}
+                    //finally
+                    //{
+                    //    m_con.Close();
+                    //}
+
+
+
+
+
+
+
+                    if (radioButton1.Checked == true)
+                    {
+                        totalhirecost = BaseCost + waitingcharge + extrakmcharge;
+                        PrintConsole("Day total", totalhirecost.ToString());
+                        label27.Text = totalhirecost.ToString();
+                        label50.Text = "...".ToString();
+                        //int totalhirecost = Convert.ToInt32(totalhire);
+                    }
+
+                    if (radioButton2.Checked == true)
+                    {
+                        totalhirecost = BaseCost + overnightstaycharge + extrakmcharge;
+                        PrintConsole("long tour", totalhirecost.ToString());
+                        label50.Text = totalhirecost.ToString();
+                        label27.Text = "...".ToString();
+                        //it totalhirecost = Convert.ToInt32(totalhire);
+                    }
+
 
                 }
 
+                
 
-
-                if (radioButton1.Checked == true)
-                {
-                    totalhirecost = BaseCost + waitingcharge + extrakmcharge;
-                    PrintConsole("Day total", totalhirecost.ToString());
-                    label27.Text = totalhirecost.ToString();
-                    label50.Text = "...".ToString();
-                    //int totalhirecost = Convert.ToInt32(totalhire);
-                }
-
-                if (radioButton2.Checked == true)
-                {
-                    totalhirecost = BaseCost + overnightstaycharge + extrakmcharge;
-                    PrintConsole("long tour", totalhirecost.ToString());
-                    label50.Text = totalhirecost.ToString();
-                    label27.Text = "...".ToString();
-                    //it totalhirecost = Convert.ToInt32(totalhire);
-                }
-
-                return totalhirecost;
 
             }
-            else
-            { return 0; }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error");
+            }
 
+           
 
-
+                return totalhirecost;
 
         }
 
@@ -728,9 +809,9 @@ namespace Ayubo_Drive
 
         private void comboBox2_SelectedIndexChanged_2(object sender, EventArgs e)
         {
-            string J_Id = comboBox2.SelectedValue.ToString();
+            //string J_Id = comboBox2.SelectedValue.ToString();
 
-            j = c.GetJobById(J_Id);
+            //j = c.GetJobById(J_Id);
 
 
         }
@@ -827,6 +908,11 @@ namespace Ayubo_Drive
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

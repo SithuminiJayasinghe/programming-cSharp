@@ -16,7 +16,7 @@ namespace Ayubo_Drive
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_customer());
+            Application.Run(new Form_sign_in());
         }
     }
 }
